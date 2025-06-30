@@ -46,12 +46,14 @@ class PassengerPlane:
                  model: str,
                  num_of_passengers: int,
                  current_height: int,
-                 current_velocity: float):
+                 current_velocity: float,
+                 is_in_air: bool = False):
         self.manufactorer = manufactorer
         self.model = model
         self.num_of_passengers = num_of_passengers
         self.current_height = current_height
         self.current_velocity = current_velocity
+        self.is_in_air = is_in_air
 
     def pullup(self):
         if self.current_height > 0: # or self.current_velocity > 0:
