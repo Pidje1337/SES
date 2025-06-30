@@ -56,9 +56,10 @@ class PassengerPlane:
         self.is_in_air = is_in_air
 
     def pullup(self):
-        if self.current_height > 0: # or self.current_velocity > 0:
+        if self.is_in_air: # or self.current_velocity > 0:
             return "Самолёт уже на взлёте!"
         else:
+            self.is_in_air = True
             return "Самолёт взлетает!"
 
     def land(self):
