@@ -13,3 +13,7 @@ class BankAccount:
     def get_owner(self) -> str:
         return f"{self.__owner}"
 
+    def set_owner(self, new_owner: str) -> None:
+        if not isinstance(new_owner, str):
+            return TypeError("Ошибка: неправильный тип входных данных")
+        self.__owner = new_owner
