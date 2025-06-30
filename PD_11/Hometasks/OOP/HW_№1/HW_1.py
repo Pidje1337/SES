@@ -72,7 +72,9 @@ class PassengerPlane:
             return "Самолёт посадили!"
 
     def change_height(self, value: int):
-        if value < 0:
+        if self.is_in_air == False:
+            return "Самолёт ещё не взлетел!"
+        elif value < 0:
             return "Некорректное значение! Самолёт разобьётся!"
         elif value > 12000:
             return "Некорректное значение! Максимальная высота полёта - 12 000 м!"
