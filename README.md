@@ -1,2 +1,2 @@
 # SES
-Projects, homeworks and stuff
+Coming soon
