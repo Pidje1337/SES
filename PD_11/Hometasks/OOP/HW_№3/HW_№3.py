@@ -10,4 +10,6 @@ class BankAccount:
         if not isinstance(balance, float):
             raise TypeError("Ошибка: Неправильный тип входных данных")
 
+    def get_owner(self) -> str:
+        return f"{self.__owner}"
 
