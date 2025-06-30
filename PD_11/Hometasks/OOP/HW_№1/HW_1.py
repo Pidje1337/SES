@@ -107,6 +107,8 @@ class MusicAlbum:
         self.playlist = playlist
 
     def add_to_playlist(self, value):
+        if value not in self.playlist:
+            return "Трек уже есть в списке"
         self.playlist.append(value)
         return "Трек добавлен!"
 
