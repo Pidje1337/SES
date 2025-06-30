@@ -81,13 +81,13 @@ class PassengerPlane:
         else:
             self.current_height = value
 
-    def change_velocity(self, value: float, option: bool=True):
-        if option:
-            self.current_velocity += value
-        elif not option and self.current_velocity < value:
-            self.current_velocity = 0
+    def change_velocity(self, value: float):
+        if self.is_in_air == False:
+            return "Самолёт ещё не взлетел!"
+        elif value < 0:
+            return "Некорректное значение! Скорость отрицательной не бывает!"
         else:
-            self.current_velocity -= value
+            self.current_velocity = value
 
     def __str__(self):
         return f"Производитель: {self.manufactorer}\nМодель: {self.model}\nВместимость: {self.num_of_passengers} чел.\nТекущая вцысота: {self.current_height}\nТекущая скорость: {self.current_velocity} м/с"
