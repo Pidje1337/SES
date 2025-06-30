@@ -60,6 +60,8 @@ class PassengerPlane:
             return "Самолёт уже на взлёте!"
         else:
             self.is_in_air = True
+            self.change_height(1000)
+            self.change_velocity(100)
             return "Самолёт взлетает!"
 
     def land(self):
