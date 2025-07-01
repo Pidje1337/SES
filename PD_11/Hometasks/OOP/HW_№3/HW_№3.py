@@ -35,6 +35,10 @@ class Rectangle:
 
     def __init__(self, height: float, width: float):
         self.__height = height
+        if not isinstance(height, float):
+            raise TypeError("Ошибка: Некорректный тип входных данных")
         self.__width = width
+        if not isinstance(width, float):
+            raise TypeError("Ошибка: Некорректный тип входных данных")
         self.__area = self.__height * self.__width
 
