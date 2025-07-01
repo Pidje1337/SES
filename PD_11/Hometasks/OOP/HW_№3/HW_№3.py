@@ -101,5 +101,6 @@ class Student:
         else:
             raise TypeError("Ошибка: Некорректный тип входных данных")
 
-
+    def average(self) -> float:
+        return sum(self.__grades)/len(self.__grades)
 
