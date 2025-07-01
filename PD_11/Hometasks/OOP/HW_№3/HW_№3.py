@@ -27,3 +27,14 @@ class BankAccount:
         if new_balance < 0:
             raise ValueError("Ошибка: Некорректное значение - баланс не может быть отрицательным")
 
+
+
+# Задание № 2
+
+class Rectangle:
+
+    def __init__(self, height: float, width: float):
+        self.__height = height
+        self.__width = width
+        self.__area = self.__height * self.__width
+
