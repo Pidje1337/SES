@@ -200,3 +200,8 @@ class EmployeePayroll:
             raise TypeError("Ошибка: Некорректный тип входных данных")
         self.__tax_rate = new_tax_rate
 
+    def net_salary(self) -> float:
+        return self.__salary * (1 - self.__tax_rate)
+
+    def annual_net(self) -> float:
+        return self.net_salary() * 12
