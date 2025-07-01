@@ -3,12 +3,12 @@
 class BankAccount:
 
     def __init__(self, owner: str, balance: float):
-        self.__owner = owner
         if not isinstance(owner, str):
             raise TypeError("Ошибка: Неправильный тип входных данных")
-        self.__balance = balance
+        self.__owner = owner
         if not isinstance(balance, float):
             raise TypeError("Ошибка: Неправильный тип входных данных")
+        self.__balance = balance
 
     def get_owner(self) -> str:
         return f"{self.__owner}"
@@ -34,12 +34,12 @@ class BankAccount:
 class Rectangle:
 
     def __init__(self, height: float, width: float):
-        self.__height = height
         if not isinstance(height, float):
             raise TypeError("Ошибка: Некорректный тип входных данных")
-        self.__width = width
+        self.__height = height
         if not isinstance(width, float):
             raise TypeError("Ошибка: Некорректный тип входных данных")
+        self.__width = width
         self.__area = self.__height * self.__width
 
     def get_height(self) -> float:
@@ -72,14 +72,14 @@ class Rectangle:
 class Student:
 
     def __init__(self, name: str, grades: list[int] = []):
-        self.__name = name
         if not isinstance(name, str):
             raise TypeError("Ошибка: Некорректный тип входных данных")
-        self.__grades = grades
+        self.__name = name
         if isinstance(grades, list):
             for grade in grades:
                 if not isinstance(grade, int):
                     raise TypeError("Ошибка: Некорректный тип входных данных")
+            self.__grades = grades
         else:
             raise TypeError("Ошибка: Некорректный тип входных данных")
 
@@ -113,18 +113,20 @@ class Student:
 class TemperatureLog:
 
     def __init__(self, city: str, temperatures: list[float] = []):
-        self.__city = city
         if not isinstance(city, str):
             raise TypeError("Ошибка: Некорректный тип входных данных")
-        self.__temperatures = temperatures
+        self.__city = city
         if isinstance(temperatures, list):
             for temperature in temperatures:
                 if not isinstance(temperature, float):
                     raise TypeError("Ошибка: Некорректный тип входных данных")
+
+            self.__temperatures = temperatures
         else:
             raise TypeError("Ошбика: Некорректный тип входных данных")
         if len(temperatures) != 7:
             raise ValueError("Ошибка: Список температур должен иметь ровно 7 значений")
+
 
     def get_city(self) -> str:
         return self.__city
@@ -138,9 +140,9 @@ class TemperatureLog:
         return self.__temperatures
 
     def set_temperatures(self, new_temperatures: list[float]) -> None:
-        if len(new_temperatures) != 7:
-            raise ValueError("Ошибка: В данном списке должно быть ровно 7 значений")
         if isinstance(new_temperatures, list):
+            if len(new_temperatures) != 7:
+                raise ValueError("Ошибка: В данном списке должно быть ровно 7 значений")
             for value in new_temperatures:
                 if not isinstance(value, float):
                     raise TypeError("Ошибка: Некорректный тип входных данных")
@@ -165,17 +167,17 @@ class TemperatureLog:
 class EmployeePayroll:
 
     def __init__(self, name: str, salary: float, tax_rate: float):
-        self.__name = name
         if not isinstance(name, str):
             raise TypeError("Ошибка: Некорректный тип входных данных")
-        self.__salary = salary
+        self.__name = name
         if not isinstance(salary, float):
             raise TypeError("Ошибка: Некорректный тип входных данных")
-        self.__tax_rate = tax_rate
+        self.__salary = salary
         if not isinstance(tax_rate, float):
             raise TypeError("Ошибка: Некорректный тип входных данных")
         if 0 < tax_rate < 1:
             raise ValueError("Ошибка: Налог не может быть меньше 0 или больше 1")
+        self.__tax_rate = tax_rate
 
     def get_name(self) -> str:
         return self.__name
