@@ -69,7 +69,19 @@ class Rectangle:
 
 class Student:
 
-    def __init__(self, name: str, grades: list[float] = []):
+    def __init__(self, name: str, grades: list[int] = []):
         self.__name = name
+        if not isinstance(name, str):
+            raise TypeError("Ошибка: Некорректный тип входных данных")
         self.__grades = grades
+        if isinstance(grades, list):
+            for grade in grades:
+                if not isinstance(grade, int):
+                    raise TypeError("Ошибка: Некорректный тип входных данных")
+        else:
+            raise TypeError("Ошибка: Некорректный тип входных данных")
+
+
+
+
 
