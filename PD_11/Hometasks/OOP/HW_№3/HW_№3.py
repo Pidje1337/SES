@@ -119,3 +119,6 @@ class TemperatureLog:
                     raise TypeError("Ошибка: Некорректный тип входных данных")
         else:
             raise TypeError("Ошбика: Некорректный тип входных данных")
+        if len(temperatures) != 7:
+            raise ValueError("Ошибка: Список температур должен иметь ровно 7 значений")
+
