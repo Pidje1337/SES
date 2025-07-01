@@ -52,3 +52,13 @@ class Rectangle:
             raise ValueError("Ошибка: Высота не может быть меньше или равна нулю")
         self.__height = new_height
 
+    def get_width(self) -> float:
+        return self.__width
+
+    def set_width(self, new_width: float):
+        if not isinstance(new_width, float):
+            raise TypeError("Ошибка: Некорректный тип входных данных")
+        if new_width <= 0:
+            raise ValueError("Ошибка: Высота не может быть меньше или равна нулю")
+        self.__width = new_width
+
