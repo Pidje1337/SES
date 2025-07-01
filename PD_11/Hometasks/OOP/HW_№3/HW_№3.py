@@ -162,3 +162,18 @@ class TemperatureLog:
 
 # Задание № 5:
 
+class EmployeePayroll:
+
+    def __init__(self, name: str, salary: float, tax_rate: float):
+        self.__name = name
+        if not isinstance(name, str):
+            raise TypeError("Ошибка: Некорректный тип входных данных")
+        self.__salary = salary
+        if not isinstance(salary, float):
+            raise TypeError("Ошибка: Некорректный тип входных данных")
+        self.__tax_rate = tax_rate
+        if not isinstance(tax_rate, float):
+            raise TypeError("Ошибка: Некорректный тип входных данных")
+        if 0 < tax_rate < 1:
+            raise ValueError("Ошибка: Налог не может быть меньше 0 или больше 1")
+
