@@ -122,3 +122,25 @@ class TemperatureLog:
         if len(temperatures) != 7:
             raise ValueError("Ошибка: Список температур должен иметь ровно 7 значений")
 
+    def get_city(self) -> str:
+        return self.__city
+
+    def set_city(self, new_city) -> None:
+        if not isinstance(new_city, str):
+            raise TypeError("Ошибка: Некорректный тип входных данных")
+        self.__city = new_city
+
+    def get_temperatures(self) -> list[float]:
+        return self.__temperatures
+
+    def set_temperatures(self, new_temperatures: list[float]) -> None:
+        if len(new_temperatures) != 7:
+            raise ValueError("Ошибка: В данном списке должно быть ровно 7 значений")
+        if isinstance(new_temperatures, list):
+            for value in new_temperatures:
+                if not isinstance(value, float):
+                    raise TypeError("Ошибка: Некорректный тип входных данных")
+            self.__temperatures.clear()
+            self.__temperatures.extend(new_temperatures)
+        else:
+            raise TypeError("Ошибка: Некорректный тип входных данных")
