@@ -62,3 +62,5 @@ class Rectangle:
             raise ValueError("Ошибка: Высота не может быть меньше или равна нулю")
         self.__width = new_width
 
+    def get_area(self) -> float:
+        return self.__area
