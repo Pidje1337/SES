@@ -144,3 +144,12 @@ class TemperatureLog:
             self.__temperatures.extend(new_temperatures)
         else:
             raise TypeError("Ошибка: Некорректный тип входных данных")
+
+    def avg_temp(self) -> None:
+        return sum(self.__temperatures)/len(self.__temperatures)
+
+    def max_temp(self) -> None:
+        return max(self.__temperatures)
+
+    def min_temp(self) -> None:
+        return min(self.__temperatures)
