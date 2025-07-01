@@ -104,3 +104,18 @@ class Student:
     def average(self) -> float:
         return sum(self.__grades)/len(self.__grades)
 
+# Задание № 4
+
+class TemperatureLog:
+
+    def __init__(self, city: str, temperatures: list[float] = []):
+        self.__city = city
+        if not isinstance(city, str):
+            raise TypeError("Ошибка: Некорректный тип входных данных")
+        self.__temperatures = temperatures
+        if isinstance(temperatures, list):
+            for temperature in temperatures:
+                if not isinstance(temperature, float):
+                    raise TypeError("Ошибка: Некорректный тип входных данных")
+        else:
+            raise TypeError("Ошбика: Некорректный тип входных данных")
