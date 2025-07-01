@@ -65,6 +65,8 @@ class Rectangle:
     def get_area(self) -> float:
         return self.__area
 
+
+
 # Задание № 3
 
 class Student:
@@ -103,6 +105,8 @@ class Student:
 
     def average(self) -> float:
         return sum(self.__grades)/len(self.__grades)
+
+
 
 # Задание № 4
 
@@ -153,3 +157,8 @@ class TemperatureLog:
 
     def min_temp(self) -> None:
         return min(self.__temperatures)
+
+
+
+# Задание № 5:
+
