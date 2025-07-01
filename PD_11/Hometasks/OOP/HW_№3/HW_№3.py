@@ -81,7 +81,25 @@ class Student:
         else:
             raise TypeError("Ошибка: Некорректный тип входных данных")
 
+    def get_name(self) -> str:
+        return self.__name
 
+    def set_name(self, new_name: str) -> None:
+        if not isinstance(new_name, str):
+            raise TypeError("Ошибка: Некорректный тип входных данных")
+        self.__name = new_name
+
+    def get_grades(self) -> list:
+        return self.__grades
+
+    def set_grades(self, new_grades: list[int]) -> None:
+        if isinstance(new_grades, list):
+            for grade in new_grades:
+                if not isinstance(grade, int):
+                    raise TypeError("Ошибка: Некорректный тип входных данных")
+            self.__grades.extend(new_grades)
+        else:
+            raise TypeError("Ошибка: Некорректный тип входных данных")
 
 
 
