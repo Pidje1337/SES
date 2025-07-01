@@ -43,7 +43,7 @@ class Rectangle:
         self.__area = self.__height * self.__width
 
     def get_height(self) -> float:
-        return f"{self.__height}"
+        return self.__height
 
     def set_height(self, new_height: float) -> None:
         if not isinstance(new_height, float):
