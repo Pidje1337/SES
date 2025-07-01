@@ -64,3 +64,12 @@ class Rectangle:
 
     def get_area(self) -> float:
         return self.__area
+
+# Задание № 3
+
+class Student:
+
+    def __init__(self, name: str, grades: list[float] = []):
+        self.__name = name
+        self.__grades = grades
+
