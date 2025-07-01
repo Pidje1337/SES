@@ -177,3 +177,26 @@ class EmployeePayroll:
         if 0 < tax_rate < 1:
             raise ValueError("Ошибка: Налог не может быть меньше 0 или больше 1")
 
+    def get_name(self) -> str:
+        return self.__name
+
+    def set_name(self, new_name: str) -> None:
+        if not isinstance(new_name, str):
+            raise TypeError("Ошибка: Некорректный тип входных данных")
+
+    def get_salary(self) -> float:
+        return self.__salary
+
+    def set_salary(self, new_salary: float) -> None:
+        if not isinstance(new_salary, float):
+            raise TypeError("Ошибка: Некорректный тип входных данных")
+        self.__salary = new_salary
+
+    def get_tax_rate(self) -> float:
+        return self.__tax_rate
+
+    def set_tax_rate(self, new_tax_rate: float) -> None:
+        if not isinstance(new_tax_rate, float):
+            raise TypeError("Ошибка: Некорректный тип входных данных")
+        self.__tax_rate = new_tax_rate
+
