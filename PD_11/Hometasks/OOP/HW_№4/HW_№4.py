@@ -15,25 +15,29 @@ class Library:
                     if not isinstance(book, Book): raise TypeError("В списке книг библиотеки должны быть только книги!")
         else: raise TypeError("Ошибка: Некорректные входные данные")
 
-        self.__name = name
-        self.__address = address
-        self.__books = books
+        self._name = name
+        self._address = address
+        self._books = books
 
     def __addBook(self, book: Book):
 
         if not isinstance(book, Book): raise TypeError("В библиотеку можно добавить только книгу!")
 
-        self.__books.append(book)
+        self._books.append(book)
 
     def __removeBook(self, book: Book):
 
         if not isinstance(book, Book): raise TypeError("Из библиотеки можно брать только книги!")
-        if book in self.__books: self.__books.remove(book)
+        if book in self._books: self._books.remove(book)
         else: raise ValueError("Данной книге в списке нет!")
 
     def __listBooks(self):
-        for book in self.__books:
+        for book in self._books:
             book._getInfo()
+
+    def __findBookByTitle(self, title):
+        for book in self._books:
+            if title == book._title
 
 
 class Book:
@@ -47,12 +51,12 @@ class Book:
         if not isinstance(year, int): raise TypeError("Ошибка: Некорректный тип входных данных")
         if year < 0 or year > 2025: raise ValueError("Книга не могла быть издана в данном году!")
 
-        self.__title = title
-        self.__author = author
-        self.__year = year
+        self._title = title
+        self._author = author
+        self._year = year
 
     def _getInfo(self):
-        print(f"{self.__title} - {self.__author}, {self.__year} г.")
+        print(f"{self._title} - {self._author}, {self._year} г.")
 
 
 # Задание № 2
