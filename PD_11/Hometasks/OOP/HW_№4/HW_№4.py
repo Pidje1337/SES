@@ -96,6 +96,12 @@ class University:
 
         self._name = name
 
+    def _add_faculty(self, faculty: Faculty):
+
+        if not isinstance(faculty, Faculty): raise TypeError("Некорректные входные данные")
+
+        self._faculties.append(faculty)
+
 
 class Faculty:
 
