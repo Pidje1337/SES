@@ -131,7 +131,9 @@ class Faculty:
         self._students.remove(student)
         print(f"Студент {student._name} выпустился!")
 
-
+    def list_students(self):
+        for student in self._students:
+            print(student)
 
 class Student:
 
