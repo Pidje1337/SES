@@ -12,6 +12,9 @@ class Vector2D:
         if not isinstance(other, Vector2D): raise ValueError("Данный метод позволяет складывать только вектора!")
         return Vector2D(self.x + other.x, self.y + other.y)
 
+    def sub(self, other):
+        if not isinstance(other, Vector2D): raise ValueError("Данный метод позволяет вычитать только вектора!")
+        return Vector2D(self.x - other.x, self.y - other.y)
 
 # Задание № 2
 
