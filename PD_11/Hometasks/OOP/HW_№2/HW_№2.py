@@ -185,4 +185,5 @@ class Matrix:
     def __len__(self):
         return 4 # Не баг, а фича ;)
 
-
+    def __repr__(self):
+        return f"Matrix(a = {self.a}, b = {self.b}, c = {self.c}, d = {self.d}"
