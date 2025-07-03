@@ -42,6 +42,16 @@ class Money:
         self.dollars = dollars + cents // 100
         self.cents = cents % 100
 
+    def __add__(self, other):
+        if not isinstance(other, Money): raise TypeError("Данная операция доступна только для сложения балансов")
+        return Money(self.dollars + other.dollars, self.cents + other.cents)
+
+    def __sub__(self, other):
+        if not isinstance(other, Money): raise TypeError("Данная операция доступна только для вычитания балансов")
+        return Money(self.dollars - other.dollars, self.cents - other.cents)
+
+
+
 
 
 # Задание № 3
