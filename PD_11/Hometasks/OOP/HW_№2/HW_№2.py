@@ -34,7 +34,13 @@ class Vector2D:
 
 class Money:
 
-    pass
+    def __init__(self, dollars: int, cents: int):
+        if not isinstance(dollars, int): raise TypeError("Ошибка: Данная переменная является целым числом")
+        if dollars < 0: raise ValueError("Ошибка: Баланс не может быть отрицательным")
+        if not isinstance(cents, int): raise TypeError("Ошибка: Данная переменная является целым числом")
+        if cents < 0: raise ValueError("Ошибка: Кол-во центов не может быть меньше 0")
+        self.dollars = dollars + cents // 100
+        self.cents = cents % 100
 
 
 
