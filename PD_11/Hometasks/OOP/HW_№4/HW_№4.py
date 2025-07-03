@@ -139,7 +139,8 @@ class Faculty:
 
         for student in self._students:
             if required_id == student._id: return student
-        return student
+        print("Данный студент не найден!")
+        return None
 
 class Student:
 
