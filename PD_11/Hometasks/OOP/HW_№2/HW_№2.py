@@ -8,6 +8,9 @@ class Vector2D:
         if not isinstance(y, (int or float)): raise ValueError("Ошибка: y должно быть целым или вещественным числом")
         self.y = y
 
+    def add(self, other):
+        if not isinstance(other, Vector2D): raise ValueError("Данный метод позволяет складывать только вектора!")
+        return Vector2D(self.x + other.x, self.y + other.y)
 
 
 # Задание № 2
