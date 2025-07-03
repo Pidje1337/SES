@@ -19,23 +19,23 @@ class Library:
         self._address = address
         self._books = books
 
-    def __addBook(self, book: Book):
+    def _addBook(self, book: Book):
 
         if not isinstance(book, Book): raise TypeError("В библиотеку можно добавить только книгу!")
 
         self._books.append(book)
 
-    def __removeBook(self, book: Book):
+    def _removeBook(self, book: Book):
 
         if not isinstance(book, Book): raise TypeError("Из библиотеки можно брать только книги!")
         if book in self._books: self._books.remove(book)
         else: raise ValueError("Данной книге в списке нет!")
 
-    def __listBooks(self):
+    def _listBooks(self):
         for book in self._books:
             book._getInfo()
 
-    def __findBookByTitle(self, required_title: str):
+    def _findBookByTitle(self, required_title: str):
 
         if not isinstance(required_title, str): raise TypeError("Вы ввели некорректное наименование!")
         if len(required_title) == 0: raise ValueError("Книг без названия не существвует!")
@@ -65,6 +65,7 @@ class Book:
 
     def _getInfo(self):
         print(f"{self._title} - {self._author}, {self._year} г.")
+
 
 
 # Задание № 2
