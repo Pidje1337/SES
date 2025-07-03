@@ -48,7 +48,7 @@ class Money:
 
     def __sub__(self, other):
         if not isinstance(other, Money): raise TypeError("Данная операция доступна только для вычитания балансов")
-        return Money(self.dollars - other.dollars, self.cents - other.cents)
+        return Money(self.dollars - other.dollars, 100 - abs(self.cents - other.cents))
 
 
 
