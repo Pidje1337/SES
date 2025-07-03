@@ -25,7 +25,8 @@ class Vector2D:
     def len(self):
         return sqrt(sum(self.x ** 2, self.y ** 2))
 
-
+    def __repr__(self):
+        return f"Vector2D(x = {self.x}, y = {self.y})"
 
 
 
