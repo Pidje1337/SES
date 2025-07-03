@@ -118,6 +118,20 @@ class Faculty:
 
         self._name = name
 
+    def enroll(self, student: Student):
+
+        if not isinstance(student, Student): raise TypeError("Некорректные входные данные")
+        if student in self._students: raise ValueError("Студент уже есть в списке!")
+        self._students.append(student)
+
+    def graduate(self, student: Student):
+
+        if not isinstance(student, Student): raise TypeError("Некорректные входные данные")
+        if student not in self._students: raise ValueError("Данного студента нет в списке!")
+        self._students.remove(student)
+        print(f"Студент {student._name} выпустился!")
+
+
 
 class Student:
 
