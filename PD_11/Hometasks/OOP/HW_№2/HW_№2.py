@@ -1,3 +1,5 @@
+from math import sqrt
+
 # Задание № 1
 
 class Vector2D:
@@ -19,6 +21,13 @@ class Vector2D:
     def mul(self, scalar: int or float):
         if not isinstance(scalar, (int or float)): raise TypeError("Ошибка: Scalar должно быть целым или вещественным числом")
         return Vector2D(self.x * scalar, self.y * scalar)
+
+    def len(self):
+        return sqrt(sum(self.x ** 2, self.y ** 2))
+
+
+
+
 
 # Задание № 2
 
