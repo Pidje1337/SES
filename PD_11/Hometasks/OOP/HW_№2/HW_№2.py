@@ -120,6 +120,8 @@ class Point:
     def __repr__(self):
         return f"Point(x = {self.x}, y = {self.y}"
 
+
+
 # Задание № 5
 
 class ColoredPoint(Point):
@@ -157,8 +159,20 @@ class ColoredPoint(Point):
         return f"ColoredPoint(x = {self.x}, y = {self.y}, color = {self.color}, standart_color = {self.standart_color})"
 
 
+
 # Задание № 6
 
 class Matrix:
 
-    pass
+    def __init__(self, a: int or float, b: int or float, c: int or float, d: int or float):
+
+        if not isinstance(a, int or float): raise TypeError("Ошибка: Некорректные входные данные")
+        if not isinstance(b, int or float): raise TypeError("Ошибка: Некорректные входные данные")
+        if not isinstance(c, int or float): raise TypeError("Ошибка: Некорректные входные данные")
+        if not isinstance(d, int or float): raise TypeError("Ошибка: Некорректные входные данные")
+
+        self.a = a
+        self.b = b
+        self.c = c
+        self.d = d
+
