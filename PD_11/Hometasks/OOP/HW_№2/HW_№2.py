@@ -62,7 +62,9 @@ class Money:
 
 class Time:
 
-    def __init__(self, hours: int, minutes: int, seconds: int):
+    def __init__(self, hours: int,
+                 minutes: int,
+                 seconds: int):
 
         if not isinstance(hours, int): raise TypeError("Ошибка: Данная переменная может принимать только целое число")
         if hours < 0: raise ValueError("Ошибка: Кол-во часов не может быть отрицательным")
@@ -74,6 +76,16 @@ class Time:
         self.hours = hours + minutes // 60 + seconds // 3600
         self.minutes = (minutes + seconds // 60) % 60
         self.seconds = seconds % 60
+
+    def __add__(self, other):
+
+        if not isinstance(other, Time): raise TypeError("Данный метод складывает только время!")
+
+        return Time(self.hours + other.hours,
+                    self.minutes + other.minutes,
+                    self.seconds + other.seconds)
+
+
 
 
 
