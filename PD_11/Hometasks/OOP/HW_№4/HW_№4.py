@@ -13,11 +13,11 @@ class Library:
             if len(books) != 0:
                 for book in books:
                     if not isinstance(book, Book): raise TypeError("В списке книг библиотеки должны быть только книги!")
+            self._books = books
         else: raise TypeError("Ошибка: Некорректные входные данные")
 
         self._name = name
         self._address = address
-        self._books = books
 
     def _addBook(self, book: Book):
 
