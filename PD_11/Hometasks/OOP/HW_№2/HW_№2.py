@@ -88,9 +88,8 @@ class Time:
     def __len__(self):
         return self.hours * 3600 + self.minutes * 60 + self.seconds
 
-
-
-
+    def __repr__(self):
+        return f"Time(hours = {self.hours}, minutes = {self.minutes}, seconds = {self.seconds})"
 
 
 
