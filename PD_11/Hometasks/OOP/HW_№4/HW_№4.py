@@ -167,6 +167,13 @@ class Student:
     def get_profile(self):
         print(self)
 
+    def assign_grade(self, grade: int):
+
+        if not isinstance(grade, int): raise TypeError("Некорректные входные данные")
+        if grade not in range(0, 101): raise ValueError("Оценка должна быть целым числом в пределах от 0 до 100!")
+
+        self._grades.append(grade)
+
 
 
 # Задание № 3
