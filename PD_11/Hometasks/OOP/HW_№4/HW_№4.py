@@ -19,6 +19,18 @@ class Library:
         self.__address = address
         self.__books = books
 
+    def __addBook(self, book: Book):
+
+        if not isinstance(book, Book): raise TypeError("В библиотеку можно добавить только книгу!")
+
+        self.__books.append(book)
+
+    def __removeBook(self, book: Book):
+
+        if not isinstance(book, Book): raise TypeError("Из библиотеки можно брать только книги!")
+        if book in self.__books: self.__books.remove(book)
+        else: raise ValueError("Данной книге в списке нет!")
+
 class Book:
 
     def __init__(self, title: str, author: str, year: int):
