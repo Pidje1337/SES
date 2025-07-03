@@ -85,6 +85,9 @@ class Time:
                     self.minutes + other.minutes,
                     self.seconds + other.seconds)
 
+    def __len__(self):
+        return self.hours * 3600 + self.minutes * 60 + self.seconds
+
 
 
 
