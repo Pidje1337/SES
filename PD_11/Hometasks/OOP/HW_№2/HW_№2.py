@@ -176,3 +176,10 @@ class Matrix:
         self.c = c
         self.d = d
 
+    def __add__(self, other):
+        return Matrix(self.a + other.a, self.b + other.b, self.c + other.c, self.d + other.d)
+
+    def __mul__(self, number):
+        return Matrix(self.a * number, self.b * number, self.c * number, self.d * number)
+
+
