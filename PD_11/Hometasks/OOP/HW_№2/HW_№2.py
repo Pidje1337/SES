@@ -3,17 +3,17 @@
 class Vector2D:
 
     def __init__(self, x: int or float, y: int or float):
-        if not isinstance(x, (int or float)): raise ValueError("Ошибка: x должно быть целым или вещественным числом")
+        if not isinstance(x, (int or float)): raise TypeError("Ошибка: x должно быть целым или вещественным числом")
         self.x = x
-        if not isinstance(y, (int or float)): raise ValueError("Ошибка: y должно быть целым или вещественным числом")
+        if not isinstance(y, (int or float)): raise TypeError("Ошибка: y должно быть целым или вещественным числом")
         self.y = y
 
     def add(self, other):
-        if not isinstance(other, Vector2D): raise ValueError("Данный метод позволяет складывать только вектора!")
+        if not isinstance(other, Vector2D): raise TypeError("Данный метод позволяет складывать только вектора!")
         return Vector2D(self.x + other.x, self.y + other.y)
 
     def sub(self, other):
-        if not isinstance(other, Vector2D): raise ValueError("Данный метод позволяет вычитать только вектора!")
+        if not isinstance(other, Vector2D): raise TypeError("Данный метод позволяет вычитать только вектора!")
         return Vector2D(self.x - other.x, self.y - other.y)
 
 # Задание № 2
