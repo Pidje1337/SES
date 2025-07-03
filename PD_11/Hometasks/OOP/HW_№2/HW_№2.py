@@ -10,19 +10,19 @@ class Vector2D:
         if not isinstance(y, (int or float)): raise TypeError("Ошибка: y должно быть целым или вещественным числом")
         self.y = y
 
-    def add(self, other):
+    def __add__(self, other):
         if not isinstance(other, Vector2D): raise TypeError("Данный метод позволяет складывать только вектора!")
         return Vector2D(self.x + other.x, self.y + other.y)
 
-    def sub(self, other):
+    def __sub__(self, other):
         if not isinstance(other, Vector2D): raise TypeError("Данный метод позволяет вычитать только вектора!")
         return Vector2D(self.x - other.x, self.y - other.y)
 
-    def mul(self, scalar: int or float):
+    def __mul__(self, scalar: int or float):
         if not isinstance(scalar, (int or float)): raise TypeError("Ошибка: Scalar должно быть целым или вещественным числом")
         return Vector2D(self.x * scalar, self.y * scalar)
 
-    def len(self):
+    def __len__(self):
         return sqrt(sum(self.x ** 2, self.y ** 2))
 
     def __repr__(self):
