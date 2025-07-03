@@ -55,15 +55,20 @@ class Money:
 
 
 
-
-
-
-
 # Задание № 3
 
 class Time:
 
-    pass
+    def __init__(self, hours: int, minutes: int, seconds: int):
+        if not isinstance(hours, int): raise TypeError("Ошибка: Данная переменная может принимать только целое число")
+        if hours < 0: raise ValueError("Ошибка: Кол-во часов не может быть отрицательным")
+        if not isinstance(minutes, int): raise TypeError("Ошибка: Данная переменная может принимать только целое число")
+        if minutes < 0: raise ValueError("Ошибка: Кол-во минут не может быть отрицательным")
+        if not isinstance(seconds, int): raise TypeError("Ошибка: Данная переменная может принимать только целое число")
+        if seconds < 0: raise ValueError("Ошибка: Кол-во секунд не может быть отрицательным")
+
+
+
 
 
 
