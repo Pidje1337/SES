@@ -97,7 +97,13 @@ class Time:
 
 class Point:
 
-    pass
+    def __init__(self, x: int or float, y: int or float):
+
+        if not isinstance(x, int or float): raise TypeError("Координата может быть только целым или вещественным числом")
+        if not isinstance(y, int or float): raise TypeError("Координата может быть только целым или вещественным числом")
+
+        self.x = x
+        self.y = y
 
 
 
