@@ -117,7 +117,8 @@ class Point:
 
         return Point(self.x - other.x, self.y - other.y)
 
-
+    def __repr__(self):
+        return f"Point(x = {self.x}, y = {self.y}"
 
 # Задание № 5
 
