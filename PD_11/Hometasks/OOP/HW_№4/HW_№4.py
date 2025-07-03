@@ -31,6 +31,10 @@ class Library:
         if book in self.__books: self.__books.remove(book)
         else: raise ValueError("Данной книге в списке нет!")
 
+    def __listBooks(self):
+        for book in self.__books:
+            book._getInfo()
+
 
 class Book:
 
