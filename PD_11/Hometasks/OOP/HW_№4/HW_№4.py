@@ -81,7 +81,17 @@ class Book:
 
 # Задание № 2
 
+class University:
 
+    pass
+
+class Faculty:
+
+    pass
+
+class Student:
+
+    pass
 
 
 
