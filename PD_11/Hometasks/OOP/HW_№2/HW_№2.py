@@ -2,7 +2,11 @@
 
 class Vector2D:
 
-    pass
+    def __init__(self, x: int or float, y: int or float):
+        if not isinstance(x, (int or float)): raise ValueError("Ошибка: x должно быть целым или вещественным числом")
+        self.x = x
+        if not isinstance(y, (int or float)): raise ValueError("Ошибка: y должно быть целым или вещественным числом")
+        self.y = y
 
 
 
