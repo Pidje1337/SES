@@ -35,9 +35,17 @@ class Library:
         for book in self._books:
             book._getInfo()
 
-    def __findBookByTitle(self, title):
+    def __findBookByTitle(self, required_title: str):
+
+        if not isinstance(required_title, str): raise TypeError("Вы ввели некорректное наименование!")
+        if len(required_title) == 0: raise ValueError("Книг без названия не существвует!")
+
+        result = "Данная книга отсутствует!"
         for book in self._books:
-            if title == book._title
+            if required_title == book._title:
+                result = book
+                break
+            return result
 
 
 class Book:
