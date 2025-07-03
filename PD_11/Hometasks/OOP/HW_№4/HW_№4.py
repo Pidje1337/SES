@@ -67,8 +67,11 @@ class Book:
         self._author = author
         self._year = year
 
+    def __str__(self):
+        return f"{self._title} - {self._author}, {self._year} г."
+
     def _getInfo(self):
-        print(f"{self._title} - {self._author}, {self._year} г.")
+        print(self)
 
     def _bookmarkPage(self, page: int):
 
