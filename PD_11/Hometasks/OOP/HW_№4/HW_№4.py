@@ -66,7 +66,11 @@ class Book:
     def _getInfo(self):
         print(f"{self._title} - {self._author}, {self._year} г.")
 
+    def _bookmarkPage(self, page: int):
 
+        if not isinstance(page, int): raise TypeError("Некорректные входные данные")
+
+        return f"Закладка размещена на {page}-й странице"
 
 # Задание № 2
 
