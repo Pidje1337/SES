@@ -133,7 +133,25 @@ class ColoredPoint(Point):
         self.color = color
         self.standart_color = standart_color
 
+    def __add__(self, other):
 
+        if not isinstance(other, ColoredPoint): raise TypeError("Ошибка: Недопустимые входные данные")
+
+        if self.color == other.color:
+            pass # pass для элегантности, см. условие задания № 5
+        else:
+            self.color = self.standart_color
+        super().__add__(other)
+
+    def __sub__(self, other):
+
+        if not isinstance(other, ColoredPoint): raise TypeError("Ошибка: Недопустимые входные данные")
+
+        if self.color == other.color:
+            pass # pass для элегантности, см. __add__()
+        else:
+            self.color = self.standart_color
+        super().__sub__(other)
 
 
 # Задание № 6
