@@ -60,6 +60,7 @@ class Money:
 class Time:
 
     def __init__(self, hours: int, minutes: int, seconds: int):
+
         if not isinstance(hours, int): raise TypeError("Ошибка: Данная переменная может принимать только целое число")
         if hours < 0: raise ValueError("Ошибка: Кол-во часов не может быть отрицательным")
         if not isinstance(minutes, int): raise TypeError("Ошибка: Данная переменная может принимать только целое число")
@@ -67,6 +68,9 @@ class Time:
         if not isinstance(seconds, int): raise TypeError("Ошибка: Данная переменная может принимать только целое число")
         if seconds < 0: raise ValueError("Ошибка: Кол-во секунд не может быть отрицательным")
 
+        self.hours = hours + minutes // 60 + seconds // 3600
+        self.minutes = (minutes + seconds // 60) % 60
+        self.seconds = seconds % 60
 
 
 
