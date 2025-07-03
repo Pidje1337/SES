@@ -83,7 +83,19 @@ class Book:
 
 class University:
 
-    pass
+    def __init__(self, name: str, faculties: list[Faculty]):
+
+        if not isinstance(name, str): raise TypeError("Некорректные входные данные!")
+        if len(name) == 0: raise ValueError("ВУЗ не может не иметь названия!")
+
+        if isinstance(faculties, list):
+            for faculty in faculties:
+                if not isinstance(faculty, Faculty): raise TypeError("В данном списке могут находиться только факультеты!")
+            self._faculties = faculties
+        else: raise TypeError("Некорректные входные данные")
+
+        self._name = name
+
 
 class Faculty:
 
