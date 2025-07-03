@@ -16,6 +16,10 @@ class Vector2D:
         if not isinstance(other, Vector2D): raise TypeError("Данный метод позволяет вычитать только вектора!")
         return Vector2D(self.x - other.x, self.y - other.y)
 
+    def mul(self, scalar: int or float):
+        if not isinstance(scalar, (int or float)): raise TypeError("Ошибка: Scalar должно быть целым или вещественным числом")
+        return Vector2D(self.x * scalar, self.y * scalar)
+
 # Задание № 2
 
 class Money:
