@@ -72,6 +72,13 @@ class Book:
 
         return f"Закладка размещена на {page}-й странице"
 
+    def _updateTitle(self, new_title):
+
+        if not isinstance(new_title, str): raise TypeError("Некорректное наименование!")
+        if len(new_title) == 0: raise ValueError("Невозможно задать пустое название для книги!")
+
+
+
 # Задание № 2
 
 
