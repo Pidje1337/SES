@@ -138,7 +138,7 @@ class Faculty:
     def fint_student(self, required_id):
 
         for student in self._students:
-            if required_id = student._id: return student
+            if required_id == student._id: return student
         return student
 
 class Student:
@@ -154,8 +154,12 @@ class Student:
                 for grade in grades:
                     if not isinstance(grade, int): raise TypeError("Отметка должна быть целым числом!")
                     if grade < 0 or grade > 100: raise ValueError("Отметка может принимать значения в пределах от 0 до 100!")
+            self._grades = grades
         else:
             raise TypeError("Некорректные входные данные")
+
+        self._name = name
+        self._id = id
 
 
 
