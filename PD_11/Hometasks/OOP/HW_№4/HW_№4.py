@@ -138,7 +138,7 @@ class Faculty:
     def fint_student(self, required_id):
 
         for student in self._students:
-            if required_id == student._id: return student
+            if required_id = student._id: return student
         return student
 
 class Student:
