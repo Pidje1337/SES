@@ -138,7 +138,7 @@ class Faculty:
     def fint_student(self, required_id):
 
         for student in self._students:
-            if required_id = student._id: return student
+            if required_id == student._id: return student
         return student
 
 class Student:
@@ -160,6 +160,12 @@ class Student:
 
         self._name = name
         self._id = id
+
+    def __str__(self):
+        return f"Студент: {self._name}, ID: {self._id}"
+
+    def get_profile(self):
+        print(self)
 
 
 
