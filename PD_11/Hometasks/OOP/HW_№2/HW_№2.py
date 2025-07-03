@@ -153,6 +153,9 @@ class ColoredPoint(Point):
             self.color = self.standart_color
         super().__sub__(other)
 
+    def __repr__(self):
+        return f"ColoredPoint(x = {self.x}, y = {self.y}, color = {self.color}, standart_color = {self.standart_color})"
+
 
 # Задание № 6
 
