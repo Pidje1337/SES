@@ -105,6 +105,18 @@ class Point:
         self.x = x
         self.y = y
 
+    def __add__(self, other):
+
+        if not isinstance(other, Point): raise TypeError("Данный метод позволяет складывать только точки")
+
+        return Point(self.x + other.x, self.y + other.y)
+
+    def __sub__(self, other):
+
+        if not isinstance(other, Point): raise TypeError("Данный метод позволяет вычитать только точки")
+
+        return Point(self.x - other.x, self.y - other.y)
+
 
 
 # Задание № 5
