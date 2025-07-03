@@ -5,6 +5,7 @@ from math import sqrt
 class Vector2D:
 
     def __init__(self, x: int or float, y: int or float):
+
         if not isinstance(x, (int or float)): raise TypeError("Ошибка: x должно быть целым или вещественным числом")
         self.x = x
         if not isinstance(y, (int or float)): raise TypeError("Ошибка: y должно быть целым или вещественным числом")
@@ -35,10 +36,12 @@ class Vector2D:
 class Money:
 
     def __init__(self, dollars: int, cents: int):
+
         if not isinstance(dollars, int): raise TypeError("Ошибка: Данная переменная является целым числом")
         if dollars < 0: raise ValueError("Ошибка: Баланс не может быть отрицательным")
         if not isinstance(cents, int): raise TypeError("Ошибка: Данная переменная является целым числом")
         if cents < 0: raise ValueError("Ошибка: Кол-во центов не может быть меньше 0")
+
         self.dollars = dollars + cents // 100
         self.cents = cents % 100
 
