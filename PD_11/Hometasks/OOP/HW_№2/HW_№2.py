@@ -182,4 +182,7 @@ class Matrix:
     def __mul__(self, number):
         return Matrix(self.a * number, self.b * number, self.c * number, self.d * number)
 
+    def __len__(self):
+        return 4 # Не баг, а фича ;)
+
 
