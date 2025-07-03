@@ -143,7 +143,19 @@ class Faculty:
 
 class Student:
 
-    pass
+    def __init__(self, name: str, id: int, grades: list = []):
+
+        if not isinstance(name, str): raise TypeError("Некорректные входные данные")
+        if len(name) == 0: raise ValueError("Студент должен иметь ФИО!")
+        if not isinstance(id, int): raise TypeError("Некорректные входные данные")
+        if id < 0: raise ValueError("Номер зачётки не может быть отрицательным!")
+        if isinstance(grades, list):
+            if len(grades) != 0:
+                for grade in grades:
+                    if not isinstance(grade, int): raise TypeError("Отметка должна быть целым числом!")
+                    if grade < 0 or grade > 100: raise ValueError("Отметка может принимать значения в пределах от 0 до 100!")
+        else:
+            raise TypeError("Некорректные входные данные")
 
 
 
