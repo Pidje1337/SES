@@ -124,7 +124,18 @@ class Point:
 
 class ColoredPoint:
 
-    pass
+    def __init__(self, x: int or float, y: int or float, color: str, standart_color: str = "Black"):
+
+        if not isinstance(x, int or float): raise TypeError("Ошибка: Недопустимые входные данные")
+        if not isinstance(y, int or float): raise TypeError("Ошибка: Недопустимые входные данные")
+        if not isinstance(color, str): raise TypeError("Ошибка: Недопустимые входные данные")
+        if not isinstance(standart_color, str): raise TypeError("Ошибка: Недопустимые входные данные")
+
+        self.x = x
+        self.y = y
+        self.color = color
+        self.standart_color = standart_color
+
 
 
 
