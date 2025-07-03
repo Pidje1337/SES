@@ -77,6 +77,8 @@ class Book:
         if not isinstance(new_title, str): raise TypeError("Некорректное наименование!")
         if len(new_title) == 0: raise ValueError("Невозможно задать пустое название для книги!")
 
+        self._title = new_title
+
 
 
 # Задание № 2
