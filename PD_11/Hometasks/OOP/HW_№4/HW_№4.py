@@ -31,6 +31,7 @@ class Library:
         if book in self.__books: self.__books.remove(book)
         else: raise ValueError("Данной книге в списке нет!")
 
+
 class Book:
 
     def __init__(self, title: str, author: str, year: int):
@@ -45,6 +46,9 @@ class Book:
         self.__title = title
         self.__author = author
         self.__year = year
+
+    def _getInfo(self):
+        print(f"{self.__title} - {self.__author}, {self.__year} г.")
 
 
 # Задание № 2
