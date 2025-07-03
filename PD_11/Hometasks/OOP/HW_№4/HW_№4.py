@@ -105,7 +105,19 @@ class University:
 
 class Faculty:
 
-    pass
+    def __init__(self, name: str, students: list[Student] = []):
+
+        if not isinstance(name, str): raise TypeError("Некорректные входные данные")
+        if len(name) == 0: raise ValueError("Факультет должен иметь название!")
+        if isinstance(students, list):
+            if len(students) != 0:
+                for student in students:
+                    if not isinstance(student, Student): raise TypeError("Некорректные входные данные!")
+            self._students = students
+        else: raise TypeError("Некорректные входные данные")
+
+        self._name = name
+
 
 class Student:
 
