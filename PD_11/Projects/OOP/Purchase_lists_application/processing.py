@@ -1,3 +1,7 @@
+class Category:
+
+    def __init__(self, title: str):
+        pass
 
 
 class Product:
