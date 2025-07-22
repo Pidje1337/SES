@@ -12,3 +12,16 @@ def factorial(number: int) -> int:
         result *= counter
 
     return result
+
+
+
+# Задание № 3:
+
+def count_ones(number: int) -> int:
+
+    counter = 0
+    number = bin(number)[2::]
+    for i in range(0, len(number)):
+        if number[i] == "1":
+            counter += 1
+    return counter
