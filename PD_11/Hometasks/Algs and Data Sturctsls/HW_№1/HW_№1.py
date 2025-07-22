@@ -19,6 +19,9 @@ def factorial(number: int) -> int:
 
 def count_ones(number: int) -> int:
 
+    if not isinstance(number, int):
+        raise TypeError("Error: input must be an integer number")
+
     counter = 0
     number = bin(number)[2::]
     for i in range(0, len(number)):
