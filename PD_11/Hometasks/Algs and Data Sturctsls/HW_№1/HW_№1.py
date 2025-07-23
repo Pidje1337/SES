@@ -28,3 +28,25 @@ def count_ones(number: int) -> int:
         if number[i] == "1":
             counter += 1
     return counter
+
+
+
+
+# Exercise № 4:
+
+def is_palindrome(x: int) -> bool:
+
+    num_of_digits = 1
+    buffer = x
+    while buffer // 10 != 0:
+        num_of_digits += 1
+        buffer //= 10
+
+    for i in range(0, num_of_digits//2):
+        if x // 10 ^ num_of_digits != x % 10:
+            return False
+        x //= 10
+        x %= 10^(num_of_digits - i)
+    return True
+
+
