@@ -20,7 +20,7 @@ def factorial(number: int) -> int:
 def count_ones(number: int) -> int:
 
     if not isinstance(number, int):
-        raise TypeError("Ошибка: Входная переменная должна быть целым числом")
+        raise TypeError("Ошибка: Входная переменная должна быть натуральным числом")
 
     counter = 0
     number = bin(number)[2::]
@@ -28,7 +28,6 @@ def count_ones(number: int) -> int:
         if number[i] == "1":
             counter += 1
     return counter
-
 
 
 
