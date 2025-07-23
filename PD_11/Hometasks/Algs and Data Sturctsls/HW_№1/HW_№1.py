@@ -19,6 +19,11 @@ def factorial(number: int) -> int:
 
 def fibonacci(number):
 
+    if not isinstance(number, int):
+        raise TypeError("Ошибка: Входная переменная должна быть целым число")
+    if number < 0:
+        raise ValueError("Ошибка: Вводимое число должно быть больше нуля")
+
     result = 1
     first_value = 0
     second_value = 1
