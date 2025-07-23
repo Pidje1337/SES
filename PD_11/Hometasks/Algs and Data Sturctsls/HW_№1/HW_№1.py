@@ -36,6 +36,9 @@ def count_ones(number: int) -> int:
 
 def is_palindrome(x: int) -> bool:
 
+    if not isinstance(x, int):
+        raise ValueError("Error: Input value must be an integer number")
+
     num_of_digits = 1
     buffer = x
     while buffer // 10 != 0:
@@ -48,5 +51,3 @@ def is_palindrome(x: int) -> bool:
         x //= 10
         x %= 10^(num_of_digits - i)
     return True
-
-
