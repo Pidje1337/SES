@@ -15,6 +15,23 @@ def factorial(number: int) -> int:
 
 
 
+# Задание № 2:
+
+def fibonacci(number):
+
+    result = 1
+    first_value = 0
+    second_value = 1
+    for i in range(number):
+        result = first_value + second_value
+        buffer = second_value
+        second_value += first_value
+        first_value = buffer
+
+    return result
+
+
+
 # Задание № 3:
 
 def count_ones(number: int) -> int:
