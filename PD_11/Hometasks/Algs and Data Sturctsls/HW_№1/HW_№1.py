@@ -79,6 +79,17 @@ def is_palindrome(x: int) -> bool:
 
 def dates_attendance_stat(input_list: list, week_start_in_interval: int):
 
+    if not isinstance(input_list, list):
+        raise TypeError("Ошибка: Некорректные формат входных данных")
+    if not 28 < len(input_list) < 365:
+        raise ValueError("Ошибка: Некорректная длина переданного списка")
+    if not isinstance(week_start_in_interval, int):
+        raise TypeError("Ошибка: Входная переменная должна быть натуральным числом")
+    if week_start_in_interval not in range(0, 7):
+        raise ValueError("Ошибка: В неделе всего семь дней")
+
+
+
     while len(input_list) % 7 != 0:
         input_list.pop()
 
