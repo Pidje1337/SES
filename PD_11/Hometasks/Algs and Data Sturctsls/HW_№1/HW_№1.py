@@ -122,5 +122,5 @@ def dates_attendance_stat(input_list: list, week_start_in_interval: int):
 
 
     return (f"Самые посещаемые дни:\n {most_attended_days}"
-            f"Самые малолюдные дни - {least_attended_days}"
+            f"Самые малолюдные дни:\n {least_attended_days}"
             f"Самый посещаемый месяц - {most_attended_months}")
