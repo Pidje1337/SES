@@ -1,3 +1,5 @@
+from tabnanny import check
+
 
 def check_type(value, type):
     if not isinstance(value, type):
@@ -61,5 +63,28 @@ def reverse_even_elements(arr: list) -> list:
         buffer = arr[i]
         arr[i] = arr[length - i]
         arr[length - i] = buffer
+
+    return arr
+
+
+
+# Exercise № 4:
+
+def incr_max(arr: list[int]) -> list:
+
+    check_type(arr, list)
+    length = len(arr)
+    for i in range(length):
+        if not 0 < arr[i] < 10:
+            raise ValueError("Incorrect value of element! No elements bigger than 9 allowed!")
+
+    max_elem = 0
+    for i in range(length):
+        if arr[i] > max_elem:
+            max_elem = arr[i]
+
+    for i in range(length):
+        if arr[i] == max_elem:
+            arr[i] += 1
 
     return arr
