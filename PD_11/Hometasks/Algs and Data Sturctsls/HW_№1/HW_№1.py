@@ -17,7 +17,7 @@ def factorial(number: int) -> int:
 
 # Задание № 2:
 
-def fibonacci(number):
+def fibonacci(number: int) -> int:
 
     if not isinstance(number, int):
         raise TypeError("Ошибка: Входная переменная должна быть целым число")
@@ -49,6 +49,7 @@ def count_ones(number: int) -> int:
     for i in range(0, len(number)):
         if number[i] == "1":
             counter += 1
+
     return counter
 
 
@@ -71,13 +72,14 @@ def is_palindrome(x: int) -> bool:
             return False
         x //= 10
         x %= 10^(num_of_digits - i)
+
     return True
 
 
 
 # Задание № 5
 
-def dates_attendance_stat(input_list: list, week_start_in_interval: int):
+def dates_attendance_stat(input_list: list, week_start_in_interval: int) -> str:
 
     if not isinstance(input_list, list):
         raise TypeError("Ошибка: Некорректные формат входных данных")
