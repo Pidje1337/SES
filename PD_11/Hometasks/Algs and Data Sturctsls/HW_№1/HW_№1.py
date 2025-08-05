@@ -68,10 +68,10 @@ def is_palindrome(x: int) -> bool:
         buffer //= 10
 
     for i in range(0, num_of_digits//2):
-        if x // 10 ^ num_of_digits != x % 10:
+        if x // (10 ** (num_of_digits - i)) != x % 10:
             return False
         x //= 10
-        x %= 10^(num_of_digits - i)
+        x %= 10 ** (num_of_digits - i)
 
     return True
 
