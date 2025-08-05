@@ -23,3 +23,28 @@ def max_in_range(arr: list, start: int, end: int) -> str:
 
     return (f"Максимальный элемент между {start}-м и {end}-м элементом массива равен {arr[rel_max_index]}"
             f"Абсолютный индекс максимального элемента - {abs_max_index}\nОтносительный индекс максимального элемента - {rel_max_index}")
+
+
+
+# Задание № 2:
+
+def rotate_and_reverse(arr: list, k: int) -> list:
+
+    check_type(arr, list)
+    check_type(k, int)
+    if k < 0:
+        raise ValueError("Некорректное входное значение! Сдвиг не может осуществляться на отрицательное число элементов!")
+
+    length = len(arr)
+    new_arr = []
+
+    for i in range(0, length):
+        new_arr.append(arr[(i + k) % length])
+
+    for i in range(length//2):
+        buffer = new_arr[i]
+        new_arr[i] = new_arr[length - i]
+        new_arr[length - i] = buffer
+
+    return new_arr
+
