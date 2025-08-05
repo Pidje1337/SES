@@ -48,3 +48,18 @@ def rotate_and_reverse(arr: list, k: int) -> list:
 
     return new_arr
 
+
+
+# Задание № 3:
+
+def reverse_even_elements(arr: list) -> list:
+
+    check_type(arr, list)
+    length = len(arr)
+
+    for i in range(0, length, 2):
+        buffer = arr[i]
+        arr[i] = arr[length - i]
+        arr[length - i] = buffer
+
+    return arr
