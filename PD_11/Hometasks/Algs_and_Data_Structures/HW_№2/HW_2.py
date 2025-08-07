@@ -23,7 +23,7 @@ def max_in_range(arr: list, start: int, end: int) -> str:
             rel_max_index = i
             abs_max_index = i + start
 
-    return (f"Максимальный элемент между {start}-м и {end}-м элементом массива равен {arr[rel_max_index]}"
+    return (f"Максимальный элемент между {start}-м и {end}-м элементом массива равен {arr[abs_max_index]}"
             f"Абсолютный индекс максимального элемента - {abs_max_index}\nОтносительный индекс максимального элемента - {rel_max_index}")
 
 
