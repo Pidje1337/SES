@@ -8,7 +8,7 @@ def factorial(number: int) -> int:
         raise ValueError("Ошибка: Вводимое число должно быть больше или равна 0 и меньше или равна 20")
 
     result = 1
-    for counter in range(1, number):
+    for counter in range(1, number + 1):
         result *= counter
 
     return result
