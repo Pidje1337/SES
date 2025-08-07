@@ -7,7 +7,7 @@ import pytest
                              (2, 2),
                              (5, 120),
                              (7, 5040),
-                             (10, 3_662_800)
+                             (10, 3_628_800)
                           ])
 def test_factorial(num, expected_result):
     assert factorial(num) == expected_result
