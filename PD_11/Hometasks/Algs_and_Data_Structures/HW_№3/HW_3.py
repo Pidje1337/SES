@@ -24,7 +24,7 @@ def recursive_sum(array: list[int or float]) -> int or float:
 
 # Задание № 4
 
-def revursive_max(array: list[int or float]) -> int or float:
+def recursive_max(array: list[int or float]) -> int or float:
 
     check_type(array, list)
     for elem in array:
