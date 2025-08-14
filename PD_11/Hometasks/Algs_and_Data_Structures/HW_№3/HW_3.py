@@ -90,3 +90,20 @@ def is_palindrome(string: str) -> bool:
     string = string[1:length-1]
 
     return is_palindrome(string)
+
+
+
+# Задание № 8
+
+def fibonacci(number: int) -> int:
+
+    check_type(number, int)
+
+    if number == 1:
+        return 1
+
+    if number <= 0:
+        return 0
+
+    return fibonacci(number - 1) + fibonacci(number - 2)
+
