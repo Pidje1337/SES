@@ -55,3 +55,18 @@ def recursive_sum_evens(array: list[int or float]) -> list or float:
     buff = array.pop(0)
 
     pass
+
+
+
+# Задание № 6
+
+def reverse_string(string: str) -> str:
+
+    check_type(string, str)
+
+    length = len(string)
+
+    if length == 0:
+        return string
+
+    return string[1::] + string[0]
