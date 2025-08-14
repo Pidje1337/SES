@@ -70,3 +70,23 @@ def reverse_string(string: str) -> str:
         return string
 
     return string[1::] + string[0]
+
+
+
+# Задание № 7
+
+def is_palindrome(string: str) -> bool:
+
+    check_type(string, str)
+
+    length = len(string)
+
+    if length == 0:
+        return True
+
+    if string[0] != string[length - 1]:
+        return False
+
+    string = string[1:length-1]
+
+    return is_palindrome(string)
