@@ -87,9 +87,7 @@ def is_palindrome(string: str) -> bool:
     if string[0] != string[length - 1]:
         return False
 
-    string = string[1:length-1]
-
-    return is_palindrome(string)
+    return is_palindrome(string[1:length-1])
 
 
 
