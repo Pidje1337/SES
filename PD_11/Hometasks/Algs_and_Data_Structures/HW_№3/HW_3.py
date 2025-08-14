@@ -107,3 +107,15 @@ def fibonacci(number: int) -> int:
 
     return fibonacci(number - 1) + fibonacci(number - 2)
 
+
+
+# Задание № 9
+
+def sum_of_digits(number: int) -> int:
+
+    check_type(number, int)
+
+    if number == 0:
+        return 0
+
+    return number % 10 + sum_of_digits(number // 10)
