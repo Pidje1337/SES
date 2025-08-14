@@ -36,3 +36,22 @@ def revursive_max(array: list[int or float]) -> int or float:
         return 0
 
     pass
+
+
+
+# Задание № 5
+
+def recursive_sum_evens(array: list[int or float]) -> list or float:
+
+    check_type(array, list)
+    for elem in array:
+        check_type(elem, int or float)
+
+    length = len(array)
+
+    if length == 0:
+        return 0
+
+    buff = array.pop(0)
+
+    pass
