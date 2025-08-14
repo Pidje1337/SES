@@ -19,3 +19,20 @@ def recursive_sum(array: list[int or float]) -> int or float:
         return 0
 
     return array.pop() + recursive_sum(array)
+
+
+
+# Задание № 4
+
+def revursive_max(array: list[int or float]) -> int or float:
+
+    check_type(array, list)
+    for elem in array:
+        check_type(elem, int or float)
+
+    length = len(array)
+
+    if length == 0:
+        return 0
+
+    pass
