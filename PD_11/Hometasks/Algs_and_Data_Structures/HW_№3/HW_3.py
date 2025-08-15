@@ -69,8 +69,7 @@ def reverse_string(string: str) -> str:
     if length == 0:
         return string
 
-    return string[1::] + string[0]
-
+    return reverse_string(string[1::]) + string[0]
 
 
 # Задание № 7
