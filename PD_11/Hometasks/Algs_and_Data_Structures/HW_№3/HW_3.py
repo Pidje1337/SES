@@ -35,7 +35,7 @@ def recursive_max(array: list[int or float]) -> int or float:
     if length == 0:
         return 0
 
-    pass
+    return array[0] if array[0] > recursive_max(array[1::]) else recursive_max(array[1::])
 
 
 
@@ -70,6 +70,7 @@ def reverse_string(string: str) -> str:
         return string
 
     return reverse_string(string[1::]) + string[0]
+
 
 
 # Задание № 7
