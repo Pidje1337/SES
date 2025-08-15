@@ -32,8 +32,11 @@ def recursive_max(array: list[int or float]) -> int or float:
 
     length = len(array)
 
+    if length == 1:
+        return array[0]
+
     if length == 0:
-        return 0
+        return -1
 
     return array[0] if array[0] > recursive_max(array[1::]) else recursive_max(array[1::])
 
