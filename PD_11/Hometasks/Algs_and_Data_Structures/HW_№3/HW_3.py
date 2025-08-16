@@ -52,12 +52,13 @@ def recursive_sum_evens(array: list[int or float]) -> list or float:
 
     length = len(array)
 
+    if length == 1:
+        return array[0]
+
     if length == 0:
         return 0
 
-    buff = array.pop(0)
-
-    pass
+    return array.pop(0) + recursive_sum_evens(array[1::])
 
 
 
