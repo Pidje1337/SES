@@ -55,3 +55,8 @@ class Custom_list:
             i -= 1
 
         self.__memory[index] = elem
+
+
+    def add_first(self, elem):
+
+        self.insert(0, elem)
