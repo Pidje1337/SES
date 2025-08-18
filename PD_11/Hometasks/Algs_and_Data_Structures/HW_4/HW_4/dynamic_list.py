@@ -87,3 +87,13 @@ class Custom_list:
 
         self.insert(0, elem)
 
+
+    def count(self, elem):
+
+        result = 0
+
+        for i in range(self.__count):
+            if self.__memory[i] == elem:
+                result += 1
+
+        return result
