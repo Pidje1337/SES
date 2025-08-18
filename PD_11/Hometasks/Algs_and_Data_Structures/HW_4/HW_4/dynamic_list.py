@@ -45,6 +45,14 @@ class Custom_list:
         self.__memory[self.__count] = None
 
 
+    def pop(self, index):
+
+        for i in range(index, self.__count -1):
+            self.__memory[i] = self.__memory[i+1]
+
+        self.__count -= 1
+
+
     def insert(self, index, elem):
 
         self.check_and_realloc()
@@ -60,3 +68,4 @@ class Custom_list:
     def add_first(self, elem):
 
         self.insert(0, elem)
+
