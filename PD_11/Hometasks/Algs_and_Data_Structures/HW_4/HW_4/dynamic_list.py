@@ -53,6 +53,18 @@ class Custom_list:
         self.__count -= 1
 
 
+    def find(self, elem):
+
+        target_pos = -1
+
+        for i in range(self.__count):
+            if self.__memory[i] == elem:
+                target_pos = i
+                break
+
+        return target_pos
+
+
     def insert(self, index, elem):
 
         self.check_and_realloc()
