@@ -97,3 +97,11 @@ class Custom_list:
                 result += 1
 
         return result
+
+
+    def is_empty(self):
+
+        if self.__count != 0:
+            return False
+        else:
+            return True
