@@ -47,4 +47,11 @@ class Custom_list:
 
     def insert(self, index, elem):
 
-        pass
+        self.check_and_realloc()
+
+        i = self.__count + 1
+        while i != index:
+            self.__memory[i] = self.__memory[i-1]
+            i -= 1
+
+        self.__memory[index] = elem
