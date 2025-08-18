@@ -1,5 +1,3 @@
-from tabnanny import check
-
 
 def check_type(value, type):
     if not isinstance(value, type):
