@@ -58,6 +58,8 @@ class Custom_list:
         for i in range(self.__count):
             self.__memory[i] = None
 
+        self.__count = 0
+
 
     def find(self, elem):
 
