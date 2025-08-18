@@ -53,6 +53,12 @@ class Custom_list:
         self.__count -= 1
 
 
+    def clear(self):
+
+        for i in range(self.__count):
+            self.__memory[i] = None
+
+
     def find(self, elem):
 
         target_pos = -1
