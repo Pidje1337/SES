@@ -105,5 +105,5 @@ class Custom_list:
 
         if self.__count != 0:
             return False
-        else:
-            return True
+
+        return True
