@@ -3,7 +3,7 @@ from memory_emulation import malloc, realloc
 
 
 
-class Custom_list:
+class Dynamic_list:
 
     def __init__(self):
 
