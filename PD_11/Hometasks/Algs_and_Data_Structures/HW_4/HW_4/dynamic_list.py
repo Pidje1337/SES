@@ -5,10 +5,10 @@ from memory_emulation import malloc, realloc
 
 class Dynamic_list:
 
-    def __init__(self):
+    def __init__(self, size: int):
 
         self.__count = 0
-        self.__size = 5
+        self.__size = size
         self.__memory = malloc(self.__size)
 
     def check_and_realloc(self):
