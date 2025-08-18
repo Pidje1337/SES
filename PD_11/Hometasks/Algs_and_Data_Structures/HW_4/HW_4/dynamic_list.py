@@ -11,6 +11,12 @@ class Custom_list:
         self.__size = 5
         self.__memory = malloc(self.__size)
 
+    def check_and_realloc(self):
+
+        if self.__count == self.__size:
+            new_size = self.__size + self.__size // 2
+            self.__memory = realloc(self.__memory, self.__size, new_size)
+
 
     def add(self, elem):
 
