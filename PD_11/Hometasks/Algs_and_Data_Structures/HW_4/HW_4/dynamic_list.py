@@ -15,7 +15,7 @@ class Custom_list:
     def add(self, elem):
 
         if self.__count == self.__size:
-            new_size = self.__size * self.__size // 2
+            new_size = self.__size + self.__size // 2
             self.__memory = realloc(self.__memory, self.__size, new_size)
 
 
