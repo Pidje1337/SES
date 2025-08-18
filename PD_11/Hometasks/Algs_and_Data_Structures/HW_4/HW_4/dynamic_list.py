@@ -7,6 +7,11 @@ class Dynamic_list:
 
     def __init__(self, size: int):
 
+        if not isinstance(size, int):
+            raise TypeError("Incorrect input! Size of dynamic list must be a positive integer")
+        if size < 0:
+            raise ValueError("Incorrect input! Size of dynamic list must be greater or equal to zero")
+
         self.__count = 0
         self.__size = size
         self.__memory = malloc(self.__size)
