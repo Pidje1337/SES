@@ -18,6 +18,9 @@ class Custom_list:
             self.__memory = realloc(self.__memory, self.__size, new_size)
 
 
+
+    # Element addition functions
+
     def add(self, elem):
 
         self.check_and_realloc()
@@ -25,6 +28,26 @@ class Custom_list:
         self.__memory[self.__count] = elem
         self.__count += 1
 
+
+    def insert(self, index, elem):
+
+        self.check_and_realloc()
+
+        i = self.__count + 1
+        while i != index:
+            self.__memory[i] = self.__memory[i-1]
+            i -= 1
+
+        self.__memory[index] = elem
+
+
+    def add_first(self, elem):
+
+        self.insert(0, elem)
+
+
+
+    # Element deletion functions
 
     def remove(self, elem):
 
@@ -61,6 +84,9 @@ class Custom_list:
         self.__count = 0
 
 
+
+    # Element data functions
+
     def find(self, elem):
 
         target_pos = -1
@@ -72,24 +98,6 @@ class Custom_list:
 
         return target_pos
 
-
-    def insert(self, index, elem):
-
-        self.check_and_realloc()
-
-        i = self.__count + 1
-        while i != index:
-            self.__memory[i] = self.__memory[i-1]
-            i -= 1
-
-        self.__memory[index] = elem
-
-
-    def add_first(self, elem):
-
-        self.insert(0, elem)
-
-
     def count(self, elem):
 
         result = 0
@@ -100,6 +108,9 @@ class Custom_list:
 
         return result
 
+
+
+    # Dynamic list properties functions
 
     def is_empty(self):
 
