@@ -10,3 +10,7 @@ class Stack:
         self.top = None
         self.size = 0
 
+    def push(self, value):
+        node = Node(value, self.top)
+        self.top = node
+        self.size += 1
