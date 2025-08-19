@@ -31,5 +31,6 @@ class Stack:
 
         buff = self.top
         self.top = self.top.next
+        self.size -= 1
 
         return buff
