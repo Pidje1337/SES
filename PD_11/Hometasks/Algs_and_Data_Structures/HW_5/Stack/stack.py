@@ -23,3 +23,13 @@ class Stack:
 
     def size(self):
         return self.size
+
+    def pop(self):
+
+        if self.is_empty():
+            return None
+
+        buff = self.top
+        self.top = self.top.next
+
+        return buff
