@@ -17,3 +17,6 @@ class Stack:
 
     def peek(self):
         return self.top.value
+
+    def is_empty(self):
+        return self.size == 0
