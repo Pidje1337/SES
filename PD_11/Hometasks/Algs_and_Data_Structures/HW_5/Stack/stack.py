@@ -14,3 +14,6 @@ class Stack:
         node = Node(value, self.top)
         self.top = node
         self.size += 1
+
+    def peek(self):
+        return self.top.value
