@@ -11,7 +11,7 @@ class Stack:
         self.size = 0
 
     def push(self, value):
-        node = Node(value, self.top)
+        node = self.Node(value, self.top)
         self.top = node
         self.size += 1
 
