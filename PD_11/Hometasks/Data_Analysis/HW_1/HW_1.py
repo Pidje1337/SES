@@ -28,19 +28,36 @@ import numpy as np
 
 # Задание № 4:
 
-x = np.array([
-[20.1, 20.3, 19.8],
-[21.0, 20.7, 20.2],
-[19.5, 19.8, 19.3],
-[20.8, 21.1, 20.6]
-])
+# x = np.array([
+# [20.1, 20.3, 19.8],
+# [21.0, 20.7, 20.2],
+# [19.5, 19.8, 19.3],
+# [20.8, 21.1, 20.6]
+# ])
+#
+# col_min = np.min(x, axis = 0)
+# col_max = np.max(x, axis = 0)
+# col_range = col_max - col_min
+# x = np.array((x - col_min)/col_range)
+#
+# print("col_mins:\n", col_min, "\n", "col_maxs:\n", col_max)
+# print("col_range:\n", col_range)
+# print("x:\n", x)
+# print(np.sum(x, axis = 0))
 
-col_min = np.min(x, axis = 0)
-col_max = np.max(x, axis = 0)
-col_range = col_max - col_min
-x = np.array((x - col_min)/col_range)
+# Задание № 5:
 
-print("col_mins:\n", col_min, "\n", "col_maxs:\n", col_max)
-print("col_range:\n", col_range)
-print("x:\n", x)
-print(np.sum(x, axis = 0))
+# ph = np.array([
+# [7.1, 7.4, 7.0],
+# [6.9, 7.2, 7.1],
+# [7.3, 7.5, 7.2],
+# [7.0, 7.1, 6.8],
+# [6.8, 6.9, 6.7],
+# [7.4, 7.6, 7.3]
+# ])
+#
+# print("averages:\n", np.average(ph, axis=1))
+# print("sums:\n", np.sum(ph, axis = 0))
+# print("total_sums:\n", np.sum(ph, axis = 1))
+# print("var:\n", np.var(ph, axis = 0, ddof = 1))
+
