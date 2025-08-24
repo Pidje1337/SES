@@ -81,3 +81,22 @@ import numpy as np
 # print(days[np.argmax(consumption.sum(axis = 1))])
 # print(consumption.var(axis = 0, ddof = 1))
 # print(houses[np.argmin(consumption.var(axis = 0, ddof = 1))])
+
+# Задание № 7
+
+# sensors = np.array([
+# [15, 101, 20, 0.5],
+# [16, 100, 21, 0.6],
+# [15, 102, 19, 0.4],
+# [17, 103, 22, 0.7],
+# [18, 104, 23, 0.6],
+# [19, 105, 24, 0.8],
+# [17, 103, 22, 0.5]
+# ])
+# types = ['TempSensor','PressureSensor','FlowSensor','VibrationSensor']
+#
+# print(sensors.sum(axis = 0))
+# print(np.average(sensors, axis = 0))
+# print(sensors.var(axis = 0, ddof = 1))
+# print(types[np.argmax(sensors.sum(axis = 0))])
+# print(types[np.argmin(sensors.var(axis = 0, ddof = 1))])
