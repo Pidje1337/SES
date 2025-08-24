@@ -63,20 +63,21 @@ import numpy as np
 
 # Задание № 6:
 
-consumption = np.array([
-[ 8, 6, 5],
-[10, 7, 6],
-[ 9, 8, 7],
-[11, 10, 9],
-[14, 12, 11],
-[16, 15, 13],
-[12, 11, 10]
-])
-days = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
-houses = ['H1','H2','H3']
-
-print(consumption.sum(axis = 0))
-print(consumption.sum(axis = 1))
-print(np.average(consumption, axis = 0))
-print(days[np.argmax(consumption.sum(axis = 1))])
-print(consumption.var(axis = 0, ddof = 1))
+# consumption = np.array([
+# [ 8, 6, 5],
+# [10, 7, 6],
+# [ 9, 8, 7],
+# [11, 10, 9],
+# [14, 12, 11],
+# [16, 15, 13],
+# [12, 11, 10]
+# ])
+# days = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
+# houses = ['H1','H2','H3']
+#
+# print(consumption.sum(axis = 0))
+# print(consumption.sum(axis = 1))
+# print(np.average(consumption, axis = 0))
+# print(days[np.argmax(consumption.sum(axis = 1))])
+# print(consumption.var(axis = 0, ddof = 1))
+# print(houses[np.argmin(consumption.var(axis = 0, ddof = 1))])
