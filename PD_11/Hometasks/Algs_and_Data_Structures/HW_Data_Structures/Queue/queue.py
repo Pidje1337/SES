@@ -21,3 +21,12 @@ class Queue:
 
     def peek(self):
         return self.head
+
+    def enqueue(self, value: Node):
+
+        if self.is_empty():
+
+            self.head = value
+
+        self.tail.prev = value
+        self.tail = self.tail.prev
