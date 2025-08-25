@@ -13,3 +13,6 @@ class Queue:
             self.value = value
             self.next = next
 
+    def size(self):
+        return self.size
+
