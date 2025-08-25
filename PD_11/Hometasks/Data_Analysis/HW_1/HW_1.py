@@ -1,9 +1,13 @@
 import numpy as np
 
+
+
 # Задание № 1:
 
 # temps = np.array([15.2, 16.8, 14.5, 17.0, 16.1])
 # print(temps.sum(), "\n", temps.mean(), "\n", temps.min(), "\n", temps.max())
+
+
 
 # Задание № 2:
 
@@ -11,6 +15,8 @@ import numpy as np
 # h2 = np.array([48, 46, 52])
 # print(np.sum([h1, h2], axis = 0))
 # print(np.prod([h1, h2], axis = 0))
+
+
 
 # Задание № 3:
 
@@ -25,6 +31,8 @@ import numpy as np
 # print(np.sum(x, axis = 1))
 # print(np.var(x, axis = 0, ddof = 1))
 # print(np.argmin(np.var(x, axis = 0, ddof = 1)))
+
+
 
 # Задание № 4:
 
@@ -45,6 +53,8 @@ import numpy as np
 # print("x:\n", x)
 # print(np.sum(x, axis = 0))
 
+
+
 # Задание № 5:
 
 # ph = np.array([
@@ -60,6 +70,8 @@ import numpy as np
 # print("sums:\n", np.sum(ph, axis = 0))
 # print("total_sums:\n", np.sum(ph, axis = 1))
 # print("var:\n", np.var(ph, axis = 0, ddof = 1))
+
+
 
 # Задание № 6:
 
@@ -81,6 +93,8 @@ import numpy as np
 # print(days[np.argmax(consumption.sum(axis = 1))])
 # print(consumption.var(axis = 0, ddof = 1))
 # print(houses[np.argmin(consumption.var(axis = 0, ddof = 1))])
+
+
 
 # Задание № 7
 
