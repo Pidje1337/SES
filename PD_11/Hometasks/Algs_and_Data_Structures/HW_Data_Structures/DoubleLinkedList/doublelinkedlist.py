@@ -20,6 +20,15 @@ class DoubleLinkedList:
     def is_empty(self):
         return self.size == 0
 
+    def add_first(self, value):
+
+        if self.is_empty():
+            self.head = value
+
+        value.next = self.tail
+        self.tail = value
+        self.size += 1
+
     def add_last(self, value):
 
         if self.is_empty():
