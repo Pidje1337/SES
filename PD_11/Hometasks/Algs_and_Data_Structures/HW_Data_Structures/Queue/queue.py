@@ -9,9 +9,9 @@ class Queue:
 
     class Node:
 
-        def __init__(self, value, next):
+        def __init__(self, value, prev):
             self.value = value
-            self.next = next
+            self.prev = prev
 
     def size(self):
         return self.size
