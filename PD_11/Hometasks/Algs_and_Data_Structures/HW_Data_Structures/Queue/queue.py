@@ -30,3 +30,9 @@ class Queue:
 
         self.tail.prev = value
         self.tail = self.tail.prev
+
+    def dequeue(self):
+        buffer = self.head.value
+        self.head = self.head.prev
+
+        return buffer
