@@ -32,6 +32,10 @@ class Queue:
         self.tail = self.tail.prev
 
     def dequeue(self):
+
+        if self.is_empty():
+            return None
+
         buffer = self.head.value
         self.head = self.head.prev
 
