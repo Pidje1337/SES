@@ -13,3 +13,6 @@ class DoubleLinkedList:
             self.value = value
             self.prev = prev
             self.next = None
+
+    def size(self):
+        return self.size
