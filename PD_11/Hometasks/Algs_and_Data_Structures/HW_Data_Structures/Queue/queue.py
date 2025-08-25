@@ -18,3 +18,6 @@ class Queue:
 
     def is_empty(self):
         return self.size == 0
+
+    def peek(self):
+        return self.head
