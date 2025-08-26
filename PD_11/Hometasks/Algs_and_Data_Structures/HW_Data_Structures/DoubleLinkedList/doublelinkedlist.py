@@ -38,3 +38,15 @@ class DoubleLinkedList:
 
         self.head = value
         self.size += 1
+
+    def insert(self, index, value):
+
+        count = 0
+        buff = self.tail
+        while count != index:
+            buff = buff.next
+            count += 1
+        value.prev = buff.prev
+        value.next = buff
+        buff.prev.next = value
+        buff.prev = value
