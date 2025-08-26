@@ -55,3 +55,15 @@ class DoubleLinkedList:
         self.tail = None
         self.head = None
         self.size = 0
+
+    def find(self, elem):
+
+        index = 0
+        buff = self.tail
+        while index != self.size:
+            if buff.value == elem:
+                return index
+            buff = buff.next
+            index += 1
+
+        return -1
