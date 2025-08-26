@@ -67,3 +67,11 @@ class DoubleLinkedList:
             index += 1
 
         return -1
+
+    def remove(self, elem):
+
+        buff = self.tail
+        while buff.value != elem:
+            buff = buff.next
+        buff.next.prev = buff.prev
+        buff.prev.next = buff.next
