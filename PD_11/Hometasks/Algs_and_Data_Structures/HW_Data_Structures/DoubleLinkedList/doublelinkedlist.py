@@ -75,3 +75,16 @@ class DoubleLinkedList:
             buff = buff.next
         buff.next.prev = buff.prev
         buff.prev.next = buff.next
+
+    def pop(self, index):
+
+        if index is None:
+            self.head = self.head.prev
+            self.head.next = None
+        else:
+            count = 0
+            buff = self.tail
+            while count != index:
+                buff = buff.next
+            buff.prev = buff.next
+            buff.next.prev = buff.prev
