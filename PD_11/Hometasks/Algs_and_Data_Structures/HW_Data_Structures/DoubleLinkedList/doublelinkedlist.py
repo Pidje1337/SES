@@ -50,3 +50,8 @@ class DoubleLinkedList:
         value.next = buff
         buff.prev.next = value
         buff.prev = value
+
+    def clear(self):
+        self.tail = None
+        self.head = None
+        self.size = 0
