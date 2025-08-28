@@ -5,7 +5,7 @@ def check_type(value: any, req_type: any) -> None or ValueError:
 
 # Задание № 1
 
-def bubble_sort(collection: list, order_by=lambda x, y: x > y, key=lambda obj: obj)->list:
+def bubble_sort(collection: list, order_by= lambda x, y: x > y, key= lambda obj: obj)->list:
 
     check_type(collection, list)
     length = len(collection)
@@ -19,6 +19,33 @@ def bubble_sort(collection: list, order_by=lambda x, y: x > y, key=lambda obj: o
 
 
     return collection
+
+
+
+# Задание № 2
+
+def selection_sort(collection: list, order_by= lambda x, y: x < y, key= lambda obj: obj) -> list:
+
+    check_type(collection, list)
+    length = len(collection)
+    for i in range(length):
+        check_type(collection[i], int or float)
+
+    counter = 0
+    sorted_array = []
+
+    while counter < length:
+        buff = counter
+        j = counter + 1
+        while j < length:
+            if order_by(key(array[j]), key(array[buff])):
+                buff = j
+            j += 1
+        array[counter], array[buff] = array[buff], array[counter]
+        sorted_array.append([array[counter], array[buff]])
+        counter += 1
+
+    return sorted_array
 
 # Задание № 3
 
