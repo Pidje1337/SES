@@ -1,4 +1,3 @@
-
 from memory_emulation import malloc, realloc
 
 
@@ -36,21 +35,22 @@ class Dynamic_list:
 
     def insert(self, index, elem):
 
+        if not isinstance(index, int):
+            raise TypeError("Error: Incorrect input data type")
+        if index < 0 or index > self.__size:
+            raise ValueError("Error: Incorrect index value")
+
         self.check_and_realloc()
 
-        i = self.__count + 1
-        while i != index:
-            self.__memory[i] = self.__memory[i-1]
-            i -= 1
-
+        for i in range(self.__count, index - 1, -1):
+            self.__memory[i] = self.__memory[i - 1]
         self.__memory[index] = elem
+        self.__count += 1
 
 
     def add_first(self, elem):
 
         self.insert(0, elem)
-
-
 
     # Element deletion functions
 
@@ -75,6 +75,12 @@ class Dynamic_list:
 
     def pop(self, index):
 
+        if not isinstance(index, int):
+            raise TypeError("Error: Incorrect index data type")
+        if index < 0 or index > self.__count:
+            raise ValueError("Error: Incorrect index value")
+
+        self.__memory[index] = None
         for i in range(index, self.__count -1):
             self.__memory[i] = self.__memory[i+1]
 
