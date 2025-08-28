@@ -9,6 +9,9 @@ class HashTable:
         self.__reserved_keys = []
         self.__memory = [None] * self.__size
 
+    def resize(self):
+        self.__size *= 2
+
     def get_size(self) -> int:
         return self.__count
 
@@ -32,6 +35,8 @@ class HashTable:
             if not isinstance(value, None):
                 self.__count += 1
                 self.__reserved_keys.append(key)
+                if self.__count == self.__size:
+                    self.resize()
             return
         else:
             print(f"Collision for hash: {hash}")
@@ -45,7 +50,7 @@ class HashTable:
 
         return value
 
-    def new_value_on_key(self, key: int, new_value: any) -> None:
+    def insert_on_key(self, key: int, new_value: any) -> None:
         hash = self.__hash(key)
 
         if self.__memory[hash] is None:
@@ -54,7 +59,7 @@ class HashTable:
         self.__memory[hash] = new_value
 
     def delete_by_key(self, key: int) -> None:
-        self.new_value_on_key(key, None)
+        self.insert_on_key(key, None)
 
     def is_key_reserved(self, key: int) -> bool:
         hash = self.__hash(key)
