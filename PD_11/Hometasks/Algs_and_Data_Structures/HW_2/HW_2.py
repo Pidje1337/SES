@@ -11,12 +11,12 @@ def max_in_range(arr: list, start: int, end: int) -> str:
     length = len(arr)
     check_type(start, int)
     check_type(end, int)
-    if start > length or end > length:
+    if start > length or end > length or start < 0:
         raise ValueError("Указаны некорректные пределы! Начальный или конечный индекс не может быть больше длины списка!")
 
     rel_max_index = start
     abs_max_index = 0
-    for i in range(start + 1, end + 1):
+    for i in range(start, end + 1):
         if arr[i] > arr[rel_max_index]:
             rel_max_index = i
             abs_max_index = i + start
@@ -73,8 +73,11 @@ def incr_max(arr: list[int]) -> list:
     check_type(arr, list)
     length = len(arr)
     for i in range(length):
+        check_type(arr[i], int)
         if not 0 < arr[i] < 10:
             raise ValueError("Incorrect value of element! No elements bigger than 9 allowed!")
+    if arr[0] == 0:
+        raise ValueError("A number can't start from leading zero")
 
     max_elem = 0
     for i in range(length):
