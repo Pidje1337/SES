@@ -3,7 +3,22 @@ def check_type(value: any, req_type: any) -> None or ValueError:
     if not isinstance(value, req_type):
         raise ValueError(f"Ошибка: Некорректный тип входный данных.\nОжидалось: {req_type}\nПолучено: {type(value)}")
 
+# Задание № 1
 
+def bubble_sort(collection: list, order_by=lambda x, y: x > y, key=lambda obj: obj)->list:
+
+    check_type(collection, list)
+    length = len(collection)
+
+    for i in range(length):
+        check_type(collection[i], int or float)
+        for i in range(0, length):
+            for j in range(0, lenght - 1 - i, 1):
+                if order_by(key(collection[i]), key(collection[j])):
+                    array[i], array[j] = array[j], array[i]
+
+
+    return collection
 
 # Задание № 3
 
