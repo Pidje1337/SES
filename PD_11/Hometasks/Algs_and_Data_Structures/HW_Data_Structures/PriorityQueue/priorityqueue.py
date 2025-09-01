@@ -3,42 +3,64 @@
 class PriorityQueue:
 
     def __init__(self):
-        self.__size = 0
-        self.__head = None
-        self.__tail = None
+        self.size = 0
+        self.head = None
+        self.tail = None
 
     class Node:
 
-        def __init__(self, value, prev, next, priority):
+        def __init__(self, value, priority):
             self.value = value
-            self.prev = prev
-            self.next = next
+            self.prev = None
+            self.next = None
             self.priority = priority
 
     def size(self):
-        return self.__size
+        return self.size
 
     def is_empty(self):
-        return self.__size == 0
+        return self.size == 0
 
     def peek(self):
-        return self.__head
+        return self.head
 
     def dequeue(self):
 
         if self.is_empty():
             return None
 
-        self.__head = self.__head.prev
-        self.__head.next = None
+        buff = self.head.value
+        self.head = self.head.prev
+        self.head.next = None
 
-    def enqueue(self, node):
-        buff = self.__tail
-        while buff.priority != node.priority:
+        self.size -= 1
+
+        return buff
+
+    def enqueue(self, value, priority):
+
+        node = self.Node(value, priority)
+
+        if self.is_empty():
+            self.head = node
+            self.tail = node
+            self.size += 1
+            return
+
+        buff = self.tail
+        if buff.priority == node.priority:
+            buff.prev = node
+            node.next = buff
+            self.tail = node
+            self.size += 1
+            return
+
+        while buff.priority < node.priority:
             buff = buff.next
         node.next = buff
         node.prev = buff.prev
-        buff.prev.next = node
+        node.prev.next = node
         buff.prev = node
 
+        self.size += 1
 

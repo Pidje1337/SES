@@ -1,103 +1,113 @@
+from multiprocessing.managers import Value
 
 
 class LinkedList:
 
     def __init__(self):
-        self.__size = 0
-        self.__head = None
+        self.size = 0
+        self.head = None
 
     class Node:
 
-        def __init__(self, value, next):
+        def __init__(self, value):
             self.value = value
-            self.next = next
+            self.next = None
 
-    def size(self):
-        return self.__size
+    def get_size(self):
+        return self.size
 
     def is_empty(self):
-        return self.__size == 0
+        return self.size == 0
 
     def clear(self):
-        self.__size = 0
-        self.__head = None
+        self.size = 0
+        self.head = None
 
-    def add_first(self, node):
+    def add_first(self, value):
+
+        node = self.Node(value)
 
         if not self.is_empty():
-            node.next = self.__head
-        self.__head = node
+            node.next = self.head
+        self.head = node
 
-        self.__size += 1
+        self.size += 1
 
-    def add_last(self, node):
+    def add_last(self, value):
+
+        node = self.Node(value)
 
         if self.is_empty():
-            self.__head = node
+            self.head = node
         else:
-            buff = self.__head
+            buff = self.head
             while buff.next is not None:
                 buff = buff.next
             buff.next = node
 
-        self.__size += 1
+        self.size += 1
 
-    def insert(self, index, node):
+    def insert(self, index, value):
 
-        buff = self.__head
+        node = self.Node(value)
+
+        buff = self.head
         count = 0
         if index == 0:
-            self.add_first(node)
+            self.add_first(value)
         else:
             while count != index - 1:
                 buff = buff.next
+                count += 1
             node.next = buff.next
             buff.next = node
 
-        self.__size += 1
+        self.size += 1
 
     def remove(self, elem):
 
-        if self.__head == elem:
-            self.__head = self.__head.next
+        if self.head.value == elem:
+            self.head = self.head.next
         else:
             count = 0
-            buff = self.__head
-            while buff.next.value != elem and count != self.__size:
+            buff = self.head
+            while count != self.size:
+                if buff.next.value == elem:
+                    self.size -= 1
+                    buff.next = buff.next.next
+                    return
                 buff = buff.next
                 count += 1
-            if buff.next is not None:
-                buff.next = buff.next.next
-
-        self.__size -= 1
+            else:
+                return -1
 
     def pop(self, index):
 
         if index is None:
-            buff = self.__head
+            buff = self.head
             while buff.next.next is not None:
                 buff = buff.next
             result = buff.next
             buff.next = None
         else:
             result = 0
-            buff = self.__head
+            buff = self.head
             while result != index - 1:
                 buff = buff.next
                 result += 1
             result = buff.next
             buff.next = buff.next.next
 
-        self.__size -= 1
+        self.size -= 1
 
         return result
 
     def find(self, elem):
 
-        if self.__head.value == elem:
+        if self.head.value == elem:
             return 0
-        buff = self.__head
-        count = 0
+        buff = self.head
+        count = 1
         while buff.next is not None:
             if buff.value == elem:
                 return count
@@ -106,4 +116,15 @@ class LinkedList:
 
         return -1
 
+    def value_by_index(self, index):
 
+        if index > self.size:
+            raise ValueError
+
+        counter = 0
+        buff = self.head
+        while counter != index:
+            buff = buff.next
+            counter += 1
+
+        return buff.value
