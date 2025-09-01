@@ -3,9 +3,9 @@
 class DoubleLinkedList:
 
     def __init__(self):
-        self.size = 0
-        self.head = None
-        self.tail = None
+        self.__size = 0
+        self.__head = None
+        self.__tail = None
 
     class Node:
 
@@ -15,34 +15,34 @@ class DoubleLinkedList:
             self.next = None
 
     def size(self):
-        return self.size
+        return self.__size
 
     def is_empty(self):
-        return self.size == 0
+        return self.__size == 0
 
     def add_first(self, value):
 
         if self.is_empty():
-            self.head = value
+            self.__head = value
 
-        value.next = self.tail
-        self.tail = value
-        self.size += 1
+        value.next = self.__tail
+        self.__tail = value
+        self.__size += 1
 
     def add_last(self, value):
 
         if self.is_empty():
-            self.tail = value
+            self.__tail = value
         else:
-            value.prev = self.head
+            value.prev = self.__head
 
-        self.head = value
-        self.size += 1
+        self.__head = value
+        self.__size += 1
 
     def insert(self, index, value):
 
         count = 0
-        buff = self.tail
+        buff = self.__tail
         while count != index:
             buff = buff.next
             count += 1
@@ -52,15 +52,15 @@ class DoubleLinkedList:
         buff.prev = value
 
     def clear(self):
-        self.tail = None
-        self.head = None
-        self.size = 0
+        self.__tail = None
+        self.__head = None
+        self.__size = 0
 
     def find(self, elem):
 
         index = 0
-        buff = self.tail
-        while index != self.size:
+        buff = self.__tail
+        while index != self.__size:
             if buff.value == elem:
                 return index
             buff = buff.next
@@ -70,7 +70,7 @@ class DoubleLinkedList:
 
     def remove(self, elem):
 
-        buff = self.tail
+        buff = self.__tail
         while buff.value != elem:
             buff = buff.next
         buff.next.prev = buff.prev
@@ -79,11 +79,11 @@ class DoubleLinkedList:
     def pop(self, index):
 
         if index is None:
-            self.head = self.head.prev
-            self.head.next = None
+            self.__head = self.__head.prev
+            self.__head.next = None
         else:
             count = 0
-            buff = self.tail
+            buff = self.__tail
             while count != index:
                 buff = buff.next
             buff.prev = buff.next

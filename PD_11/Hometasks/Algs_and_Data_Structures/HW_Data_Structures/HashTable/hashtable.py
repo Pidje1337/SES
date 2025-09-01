@@ -19,6 +19,7 @@ class HashTable:
         HashTable.collision_counter = 0
         self.__count = 0
         self.__reserved_keys = []
+        self.__size = 1_000_000
         self.__memory = [None] * self.__size
 
     def is_empty(self) -> bool:
@@ -30,7 +31,10 @@ class HashTable:
     def add(self, key: int, value: any) -> None:
         hash = self.__hash(key)
 
-        if self.__memory[hash] is None:
+        while self.__memory[hash] is not None:
+            key += 1
+            hash = self.__hash(key ** 2)
+        else:
             self.__memory[hash] = value
             if not isinstance(value, None):
                 self.__count += 1
@@ -38,9 +42,15 @@ class HashTable:
                 if self.__count == self.__size:
                     self.resize()
             return
-        else:
-            print(f"Collision for hash: {hash}")
-            HashTable.collision_counter += 1
+
+    def delete_by_key(self, key: int) -> None:
+        hash = self.__hash(key)
+
+        if self.__memory[hash] is not None:
+            self.__memory[hash] = None
+            self.__count -= 1
+
+        return
 
     def get_by_key(self, key: int) -> any:
         hash = self.__hash(key)
@@ -49,17 +59,6 @@ class HashTable:
         if value is None:  raise ValueError(f"Value not exists by key: {key}")
 
         return value
-
-    def insert_on_key(self, key: int, new_value: any) -> None:
-        hash = self.__hash(key)
-
-        if self.__memory[hash] is None:
-            self.add(key, new_value)
-
-        self.__memory[hash] = new_value
-
-    def delete_by_key(self, key: int) -> None:
-        self.insert_on_key(key, None)
 
     def is_key_reserved(self, key: int) -> bool:
         hash = self.__hash(key)

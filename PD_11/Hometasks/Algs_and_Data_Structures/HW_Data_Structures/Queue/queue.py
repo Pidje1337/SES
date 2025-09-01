@@ -3,9 +3,9 @@
 class Queue:
 
     def __init__(self):
-        self.size = 0
-        self.head = None
-        self.tail = None
+        self.__size = 0
+        self.__head = None
+        self.__tail = None
 
     class Node:
 
@@ -14,29 +14,29 @@ class Queue:
             self.prev = prev
 
     def size(self):
-        return self.size
+        return self.__size
 
     def is_empty(self):
-        return self.size == 0
+        return self.__size == 0
 
     def peek(self):
-        return self.head
+        return self.__head
 
     def enqueue(self, value: Node):
 
         if self.is_empty():
 
-            self.head = value
+            self.__head = value
 
-        self.tail.prev = value
-        self.tail = self.tail.prev
+        self.__tail.prev = value
+        self.__tail = self.__tail.prev
 
     def dequeue(self):
 
         if self.is_empty():
             return None
 
-        buffer = self.head.value
-        self.head = self.head.prev
+        buffer = self.__head.value
+        self.__head = self.__head.prev
 
         return buffer

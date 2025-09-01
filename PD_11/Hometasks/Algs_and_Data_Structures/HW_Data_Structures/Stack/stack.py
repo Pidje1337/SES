@@ -8,34 +8,34 @@ class Stack:
             self.next = next
 
     def __init__(self):
-        self.top = None
-        self.size = 0
+        self.__top = None
+        self.__size = 0
 
     def push(self, value):
-        node = self.Node(value, self.top)
-        self.top = node
-        self.size += 1
+        node = self.Node(value, self.__top)
+        self.__top = node
+        self.__size += 1
 
     def peek(self):
 
         if self.is_empty():
             return None
 
-        return self.top.value
+        return self.__top.value
 
     def is_empty(self):
-        return self.size == 0
+        return self.__size == 0
 
     def size(self):
-        return self.size
+        return self.__size
 
     def pop(self):
 
         if self.is_empty():
             return None
 
-        buff = self.top
-        self.top = self.top.next
-        self.size -= 1
+        buff = self.__top
+        self.__top = self.__top.next
+        self.__size -= 1
 
         return buff
