@@ -53,18 +53,18 @@ class LinkedList:
 
     def insert(self, index, value):
 
+        node = self.Node(value)
+
         if index-1 > self.size:
             raise ValueError
         if index == 0:
             self.add_first(value)
             return None
-        if index == self.size + 1:
+        if index == self.size:
             self.add_last(value)
             return None
 
-        node = self.Node(Value)
-
-        counter = 1
+        counter = 0
         buff = self.head.next
         while counter != index - 1:
             counter += 1
@@ -78,18 +78,20 @@ class LinkedList:
 
         if self.head.value == elem:
             self.head = self.head.next
+            self.size -= 1
+            return
+
+        count = 0
+        buff = self.head
+        while count != self.size:
+            if buff.next.value == elem:
+                self.size -= 1
+                buff.next = buff.next.next
+                return
+            buff = buff.next
+            count += 1
         else:
-            count = 0
-            buff = self.head
-            while count != self.size:
-                if buff.next.value == elem:
-                    self.size -= 1
-                    buff.next = buff.next.next
-                    return count
-                buff = buff.next
-                count += 1
-            else:
-                return -1
+            return -1
 
     def pop(self, index):
 
@@ -130,7 +132,6 @@ class LinkedList:
 
         if index > self.size - 1:
             raise ValueError
-
 
         counter = 0
         buff = self.head

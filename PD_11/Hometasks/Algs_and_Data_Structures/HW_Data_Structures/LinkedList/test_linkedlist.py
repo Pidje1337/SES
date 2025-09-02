@@ -1,4 +1,3 @@
-from bisect import insort
 
 from linkedlist import LinkedList
 import pytest
@@ -31,23 +30,23 @@ def test_add_and_remove():
     assert example.on_index(2) == 0
     example.add_last(6)
     assert example.on_index(3) == 6
+    assert example.get_size() ==4
     example.insert(4, 10)
+    assert example.get_size() == 5
     assert example.on_index(4) == 10
 
-    # assert example.on_index(0) == 1
-    # assert example.on_index(1) == 0
-    # # assert example.on_index(2) == 2
-    #
-    # example.insert(2, 3)
-    # example.insert(3, 4)
-    #
-    # assert example.value_by_index(2) == 3
-    # assert example.value_by_index(3) == 4
-    # assert example.value_by_index(4) == 2
-    # assert example.get_size() == 5
-    #
-    # example.remove(2)
-    #
-    # assert example.get_size() == 4
+    example.insert(2, 3)
+    example.insert(3, 4)
+
+    assert example.on_index(2) == 3
+    assert example.on_index(3) == 4
+
+    example.remove(2)
+
+    assert example.get_size() == 6
+    assert example.remove(14) == -1
+    example.remove(4)
+    assert example.get_size() == 5
+
 
 
