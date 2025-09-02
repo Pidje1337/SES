@@ -33,6 +33,8 @@ class LinkedList:
 
         self.size += 1
 
+        return None
+
     def add_last(self, value):
 
         node = self.Node(value)
@@ -47,20 +49,28 @@ class LinkedList:
 
         self.size += 1
 
+        return None
+
     def insert(self, index, value):
 
-        node = self.Node(value)
-
-        buff = self.head
-        count = 0
+        if index-1 > self.size:
+            raise ValueError
         if index == 0:
             self.add_first(value)
-        else:
-            while count != index - 1:
-                buff = buff.next
-                count += 1
-            node.next = buff.next
-            buff.next = node
+            return None
+        if index == self.size + 1:
+            self.add_last(value)
+            return None
+
+        node = self.Node(Value)
+
+        counter = 1
+        buff = self.head.next
+        while counter != index - 1:
+            counter += 1
+            buff = buff.next
+        node.next = buff.next
+        buff.next = node
 
         self.size += 1
 
@@ -75,7 +85,7 @@ class LinkedList:
                 if buff.next.value == elem:
                     self.size -= 1
                     buff.next = buff.next.next
-                    return
+                    return count
                 buff = buff.next
                 count += 1
             else:
@@ -100,7 +110,7 @@ class LinkedList:
 
         self.size -= 1
 
-        return result
+        return result.value
 
     def find(self, elem):
 
@@ -116,15 +126,15 @@ class LinkedList:
 
         return -1
 
-    def value_by_index(self, index):
+    def on_index(self, index):
 
-        if index > self.size:
+        if index > self.size - 1:
             raise ValueError
+
 
         counter = 0
         buff = self.head
         while counter != index:
             buff = buff.next
             counter += 1
-
         return buff.value

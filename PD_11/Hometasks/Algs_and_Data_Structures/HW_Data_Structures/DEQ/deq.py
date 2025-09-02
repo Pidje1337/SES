@@ -14,7 +14,7 @@ class DEQ:
             self.next = next
             self.prev = prev
 
-    def size(self):
+    def get_size(self):
         return self.__size
 
     def is_empty(self):

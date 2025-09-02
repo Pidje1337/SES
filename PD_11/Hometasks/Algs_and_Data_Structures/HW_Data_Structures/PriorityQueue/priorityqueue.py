@@ -1,3 +1,4 @@
+from multiprocessing.managers import Value
 
 
 class PriorityQueue:
@@ -15,14 +16,14 @@ class PriorityQueue:
             self.next = None
             self.priority = priority
 
-    def size(self):
+    def get_size(self):
         return self.size
 
     def is_empty(self):
         return self.size == 0
 
     def peek(self):
-        return self.head
+        return self.head.value
 
     def dequeue(self):
 
@@ -39,23 +40,26 @@ class PriorityQueue:
 
     def enqueue(self, value, priority):
 
+        if priority < 1:
+            raise ValueError
+
         node = self.Node(value, priority)
 
         if self.is_empty():
             self.head = node
             self.tail = node
             self.size += 1
-            return
+            return None
 
         buff = self.tail
-        if buff.priority == node.priority:
-            buff.prev = node
+        if node.priority <= buff.priority:
             node.next = buff
+            buff.prev = node
             self.tail = node
             self.size += 1
             return
 
-        while buff.priority < node.priority:
+        while node.priority < buff.next.priority:
             buff = buff.next
         node.next = buff
         node.prev = buff.prev

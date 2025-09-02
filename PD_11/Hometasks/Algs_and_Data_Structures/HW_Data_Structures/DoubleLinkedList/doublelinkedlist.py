@@ -14,7 +14,7 @@ class DoubleLinkedList:
             self.prev = prev
             self.next = None
 
-    def size(self):
+    def get_size(self):
         return self.__size
 
     def is_empty(self):
