@@ -3,3 +3,8 @@
 
 def is_empty():
     pass
+
+# Проверка существования пользователя
+
+def does_user_exist():
+    pass
