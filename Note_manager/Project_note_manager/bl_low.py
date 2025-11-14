@@ -8,3 +8,8 @@ def is_empty():
 
 def does_user_exist():
     pass
+
+# Проверка имени пользователя на валидность
+
+def username_validation():
+    pass
