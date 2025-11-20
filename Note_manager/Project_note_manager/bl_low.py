@@ -6,8 +6,13 @@ def is_empty():
 
 # Проверка существования пользователя
 
-def does_user_exist():
-    pass
+def does_user_exist(username: str) -> bool:
+    '''
+    Функциям проверяет наличие пользователя в списке пользователей
+    :param username:
+    :return True or False:
+    '''
+    return username in users
 
 # Проверка имени пользователя на валидность
 
