@@ -10,7 +10,7 @@ def is_installed() -> bool:
     Функция проверяет наличие файлов приложения на жёстком диске
     :return True or False:
     '''
-    return Path.is_dir()
+    return Path.exists(Path.home()/'note_manager_by_Kryutchkex')
 
 # Проверка списка пользователей на пустоту
 
@@ -25,7 +25,6 @@ def does_user_exist(username: str) -> bool:
     :param username:
     :return True or False:
     '''
-    return username in users
 
 # Проверка имени пользователя на валидность
 
