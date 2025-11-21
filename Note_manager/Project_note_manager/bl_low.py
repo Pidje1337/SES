@@ -2,6 +2,16 @@ import csv
 from pathlib import Path
 import os
 
+
+# Проверка на то, что приложение установлено
+
+def is_installed() -> bool:
+    '''
+    Функция проверяет наличие файлов приложения на жёстком диске
+    :return True or False:
+    '''
+    return Path.is_dir()
+
 # Проверка списка пользователей на пустоту
 
 def is_empty():
