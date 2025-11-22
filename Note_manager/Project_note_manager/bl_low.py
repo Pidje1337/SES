@@ -12,6 +12,16 @@ def is_installed() -> bool:
     '''
     return Path.exists(Path.home()/'note_manager_by_Kryutchkex')
 
+# Функция установки программы
+
+def install() -> None:
+    '''
+    Функция устанавливает программу
+    '''
+    Path.mkdir(Path.home()/'note_manager_by_Kryutchkex')
+    return None
+    
+
 # Проверка списка пользователей на пустоту
 
 def is_empty():
