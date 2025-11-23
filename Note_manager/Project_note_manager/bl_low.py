@@ -1,6 +1,7 @@
 import csv
 from pathlib import Path
 import os
+import re
 
 
 # Проверка на то, что приложение установлено
