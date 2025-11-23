@@ -36,6 +36,11 @@ def does_user_exist(username: str) -> bool:
     :param username:
     :return True or False:
     '''
+    app_directory = Path.home()/'note_manager_by_Kryutchkex'
+    users = list(app_directory.glob("*"))
+    if username in users:
+        return True
+    return False
 
 # Проверка имени пользователя на валидность
 
