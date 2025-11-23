@@ -22,7 +22,15 @@ def install() -> None:
     '''
     Path.mkdir(Path.home()/'note_manager_by_Kryutchkex')
     return None
-    
+
+
+# Функция удаления программы
+
+def uninstall():
+    if is_installed():
+        app_path = Path.home()/'note_manager_by_Kryutchkex'
+        shutil.rmtree(app_path)
+    return None
 
 # Проверка списка пользователей на пустоту
 
