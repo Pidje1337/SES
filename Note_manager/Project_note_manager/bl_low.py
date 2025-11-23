@@ -26,7 +26,8 @@ def install() -> None:
 # Проверка списка пользователей на пустоту
 
 def is_empty():
-    pass
+    app_directory = Path.home()/'note_manager_by_Kryutchkex'
+    return len(list(app_directory.glob("*"))) == 0
 
 # Проверка существования пользователя
 
