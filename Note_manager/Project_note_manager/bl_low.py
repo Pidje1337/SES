@@ -39,4 +39,19 @@ def does_user_exist(username: str) -> bool:
 
 # Проверка имени пользователя на валидность
 
-def username_validation():
+def username_validation(username):
+
+    forbidden_chars = r'[<>:"/\\|?*\x00-\x1f]'
+    forbidden_names = r'(?i)^(CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])(\..*)?$'
+    forbidden_endings = r'[ .]$'
+
+    if re.search(forbidden_chars, username):
+        raise ValueError("Ошибка: Введённое имя пользователя содержит запрещённые символы")
+
+    if re.search(forbidden_endings, username):
+        raise ValueError("Ошибка: Имя пользователя не должно оканчиваться точкой или пробелом")
+
+    if re.match(forbidden_names, username):
+        raise ValueError("Ошибка: Имя пользователя содержит зарезервированные ОС слова")
+
+    return True
